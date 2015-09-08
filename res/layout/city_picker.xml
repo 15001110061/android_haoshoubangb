@@ -18,9 +18,9 @@
         su:maskHight="32dp"
         su:noEmpty="true"
         su:normalTextColor="#777"
-        su:normalTextSize="14sp"
+        su:normalTextSize="@dimen/dd_dimen_24px"
         su:selecredTextColor="#ff000000"
-        su:selecredTextSize="22sp"
+        su:selecredTextSize="@dimen/dd_dimen_32px"
         su:unitHight="50dp" />
 
     <com.cgzz.job.b.view.ScrollerNumberPicker
@@ -35,9 +35,9 @@
         su:maskHight="32dp"
         su:noEmpty="true"
         su:normalTextColor="#777"
-        su:normalTextSize="14sp"
+        su:normalTextSize="@dimen/dd_dimen_24px"
         su:selecredTextColor="#ff000000"
-        su:selecredTextSize="22sp"
+        su:selecredTextSize="@dimen/dd_dimen_32px"
         su:unitHight="50dp" />
 
     <com.cgzz.job.b.view.ScrollerNumberPicker
@@ -52,9 +52,9 @@
         su:maskHight="32dp"
         su:noEmpty="true"
         su:normalTextColor="#777"
-        su:normalTextSize="14sp"
+        su:normalTextSize="@dimen/dd_dimen_24px"
         su:selecredTextColor="#ff000000"
-        su:selecredTextSize="22sp"
+        su:selecredTextSize="@dimen/dd_dimen_32px"
         su:unitHight="50dp" />
 
 </LinearLayout>

@@ -560,12 +560,16 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 					calendar = java.util.Calendar.getInstance();
 					times.append(df.format(calendar.getTime()));
 				} else if ("明天".equals(cityPicker.getCity_string1())) {
-					calendar.roll(java.util.Calendar.DAY_OF_YEAR, 0);
+					calendar.roll(java.util.Calendar.DAY_OF_YEAR, 1);
 					times.append(df.format(calendar.getTime()));
 				} else if ("后天".equals(cityPicker.getCity_string1())) {
-					calendar.roll(java.util.Calendar.DAY_OF_YEAR, 1);
-
+					calendar.roll(java.util.Calendar.DAY_OF_YEAR, 2);
+				
 					times.append(df.format(calendar.getTime()));
+				}else {
+			
+					times.append(cityPicker.getPhotolist1().get(cityPicker.getSelected1()).getId()+" ");
+				
 				}
 
 				times.append(cityPicker.getCity_string2().replace("点", "") + ":");

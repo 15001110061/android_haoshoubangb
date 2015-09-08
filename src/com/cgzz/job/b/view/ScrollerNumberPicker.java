@@ -3,6 +3,7 @@ package com.cgzz.job.b.view;
 import java.util.ArrayList;
 
 import com.cgzz.job.b.R;
+import com.cgzz.job.b.bean.SortModel2;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -36,7 +37,7 @@ public class ScrollerNumberPicker extends View
 	/** 选择的内容 */
 	private ArrayList<ItemObject> itemList = new ArrayList<ScrollerNumberPicker.ItemObject>();
 	/** 设置数据 */
-	private ArrayList<String> dataList = new ArrayList<String>();
+	private ArrayList<SortModel2> dataList = new ArrayList<SortModel2>();
 	/** 按下的坐标 */
 	private int downY;
 	/** 按下的时间 */
@@ -247,7 +248,7 @@ public class ScrollerNumberPicker extends View
 		{
 			ItemObject itmItemObject = new ItemObject();
 			itmItemObject.id = i;
-			itmItemObject.itemText = dataList.get(i);
+			itmItemObject.itemText = dataList.get(i).getName();
 			itmItemObject.x = 0;
 			itmItemObject.y = i * unitHeight;
 			itemList.add(itmItemObject);
@@ -536,7 +537,7 @@ public class ScrollerNumberPicker extends View
 	 * 
 	 * @param data
 	 */
-	public void setData(ArrayList<String> data)
+	public void setData(ArrayList<SortModel2> data)
 	{
 		this.dataList = data;
 		initData();

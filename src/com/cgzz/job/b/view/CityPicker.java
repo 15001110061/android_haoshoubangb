@@ -1,12 +1,16 @@
 package com.cgzz.job.b.view;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import com.cgzz.job.b.R;
+import com.cgzz.job.b.bean.SortModel2;
 import com.cgzz.job.b.view.ScrollerNumberPicker.OnSelectListener;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.net.ParseException;
 import android.os.Handler;
 import android.os.Message;
 import android.text.format.Time;
@@ -38,9 +42,16 @@ public class CityPicker extends LinearLayout {
 	// List<Cityinfo>>();
 	// private HashMap<String, List<Cityinfo>> couny_map = new HashMap<String,
 	// List<Cityinfo>>();
-	private static ArrayList<String> province_list_code = new ArrayList<String>();
-	private static ArrayList<String> city_list_code = new ArrayList<String>();
-	private static ArrayList<String> couny_list_code = new ArrayList<String>();
+	// private static ArrayList<SortModel2> province_list_code = new
+	// ArrayList<SortModel2>();
+	// private static ArrayList<String> city_list_code = new
+	// ArrayList<String>();
+	// private static ArrayList<String> couny_list_code = new
+	// ArrayList<String>();
+
+	private ArrayList<SortModel2> mPhotolist = new ArrayList<SortModel2>();
+	private ArrayList<SortModel2> mPhotolist2 = new ArrayList<SortModel2>();
+	private ArrayList<SortModel2> mPhotolist3 = new ArrayList<SortModel2>();
 
 	// private CitycodeUtil citycodeUtil;
 	private String city_code_string;
@@ -63,52 +74,135 @@ public class CityPicker extends LinearLayout {
 		// 读取城市信息string
 	}
 
+	private String getWeek(String pTime) {
+
+		String Week = "";
+
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		Calendar c = Calendar.getInstance();
+		try {
+
+			try {
+				c.setTime(format.parse(pTime));
+			} catch (java.text.ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if (c.get(Calendar.DAY_OF_WEEK) == 1) {
+			Week += "(天)";
+		}
+		if (c.get(Calendar.DAY_OF_WEEK) == 2) {
+			Week += "(一)";
+		}
+		if (c.get(Calendar.DAY_OF_WEEK) == 3) {
+			Week += "(二)";
+		}
+		if (c.get(Calendar.DAY_OF_WEEK) == 4) {
+			Week += "(三)";
+		}
+		if (c.get(Calendar.DAY_OF_WEEK) == 5) {
+			Week += "(四)";
+		}
+		if (c.get(Calendar.DAY_OF_WEEK) == 6) {
+			Week += "(五)";
+		}
+		if (c.get(Calendar.DAY_OF_WEEK) == 7) {
+			Week += "(六)";
+		}
+
+		return Week;
+	}
+
 	public void setData() {
 		mPhotolist.clear();
 		mPhotolist2.clear();
 		mPhotolist3.clear();
-		
-		
+
 		counyPicker.setVisibility(View.VISIBLE);
 		provincePicker.setVisibility(View.VISIBLE);
 		cityPicker.setVisibility(View.VISIBLE);
+
+		SortModel2 s1 = new SortModel2();
+		s1.setName("今天");
+		mPhotolist.add(s1);
+
+		SortModel2 s2 = new SortModel2();
+		s2.setName("明天");
+		mPhotolist.add(s2);
+
+		SortModel2 s3 = new SortModel2();
+		s3.setName("后天");
+		mPhotolist.add(s3);
+
+		 java.text.SimpleDateFormat df = new
+		 java.text.SimpleDateFormat("yyyy-MM-dd");
+		 java.util.Calendar calendar = java.util.Calendar.getInstance();
 		
 		
-		mPhotolist.add("今天");
-		mPhotolist.add("明天");
-		mPhotolist.add("后天");
+		 java.text.SimpleDateFormat df2 = new
+		 java.text.SimpleDateFormat("MM月dd日");
+		 java.util.Calendar calendar2 = java.util.Calendar.getInstance();
+		
+		 String ymd="",ymd2="";
+		 for(int i=3;i<7;i++){
+			 
+			 SortModel2 s6 = new SortModel2();
+		 calendar.roll(java.util.Calendar.DAY_OF_YEAR, i);
+		 ymd=df.format(calendar.getTime());
+		 
+		 
+		 
+		 calendar2.roll(java.util.Calendar.DAY_OF_YEAR, i);
+		 ymd2=df2.format(calendar2.getTime());
+		 
+		 
+		 
+		 getWeek(ymd);
+		 s6.setName(ymd2+ getWeek(ymd));
+		 s6.setId(ymd);
+			mPhotolist.add(s6);
+		 
+			
+			
+			
+		 
+		 }
+
+		for (int i = 0; i < 24; i++) {
+			SortModel2 s4 = new SortModel2();
+			s4.setName(i + "点");
+			mPhotolist2.add(s4);
+		}
 		//
-		mPhotolist2.add("0点");
-		mPhotolist2.add("1点");
-		mPhotolist2.add("2点");
-		mPhotolist2.add("3点");
-		mPhotolist2.add("4点");
-		mPhotolist2.add("5点");
-		mPhotolist2.add("6点");
-		mPhotolist2.add("7点");
-		mPhotolist2.add("8点");
-		mPhotolist2.add("9点");
-		mPhotolist2.add("10点");
-		mPhotolist2.add("11点");
-		mPhotolist2.add("12点");
-		mPhotolist2.add("13点");
-		mPhotolist2.add("14点");
-		mPhotolist2.add("15点");
-		mPhotolist2.add("16点");
-		mPhotolist2.add("17点");
-		mPhotolist2.add("18点");
-		mPhotolist2.add("19点");
-		mPhotolist2.add("20点");
-		mPhotolist2.add("21点");
-		mPhotolist2.add("22点");
-		mPhotolist2.add("23点");
-		//
-		mPhotolist3.add("00");
-		mPhotolist3.add("10");
-		mPhotolist3.add("20");
-		mPhotolist3.add("30");
-		mPhotolist3.add("40");
-		mPhotolist3.add("50");
+
+		SortModel2 s6 = new SortModel2();
+		s6.setName("00");
+		mPhotolist3.add(s6);
+
+		SortModel2 s7 = new SortModel2();
+		s7.setName("10");
+		mPhotolist3.add(s7);
+
+		SortModel2 s8 = new SortModel2();
+		s8.setName("20");
+		mPhotolist3.add(s8);
+
+		SortModel2 s9 = new SortModel2();
+		s9.setName("30");
+		mPhotolist3.add(s9);
+
+		SortModel2 s10 = new SortModel2();
+		s10.setName("40");
+		mPhotolist3.add(s10);
+
+		SortModel2 s11 = new SortModel2();
+		s11.setName("50");
+		mPhotolist3.add(s11);
 
 		Time t = new Time(); // or Time t=new Time("GMT+8"); 加上Time Zone资料。
 		t.setToNow(); // 取得系统时间。
@@ -144,21 +238,58 @@ public class CityPicker extends LinearLayout {
 		counyPicker.setVisibility(View.GONE);
 		provincePicker.setVisibility(View.VISIBLE);
 		cityPicker.setVisibility(View.VISIBLE);
-		mPhotolist.add("01月");
-		mPhotolist.add("02月");
-		mPhotolist.add("03月");
-		mPhotolist.add("04月");
-		mPhotolist.add("05月");
-		mPhotolist.add("06月");
-		mPhotolist.add("07月");
-		mPhotolist.add("08月");
-		mPhotolist.add("09月");
-		mPhotolist.add("10月");
-		mPhotolist.add("11月");
-		mPhotolist.add("12月");
+
+		SortModel2 s1 = new SortModel2();
+		s1.setName("01月");
+		mPhotolist.add(s1);
+
+		SortModel2 s2 = new SortModel2();
+		s2.setName("02月");
+		mPhotolist.add(s2);
+
+		SortModel2 s3 = new SortModel2();
+		s3.setName("03月");
+		mPhotolist.add(s3);
+
+		SortModel2 s4 = new SortModel2();
+		s4.setName("04月");
+		mPhotolist.add(s4);
+		SortModel2 s5 = new SortModel2();
+		s5.setName("05月");
+		mPhotolist.add(s5);
+		SortModel2 s6 = new SortModel2();
+		s6.setName("06月");
+		mPhotolist.add(s6);
+		SortModel2 s7 = new SortModel2();
+		s7.setName("07月");
+		mPhotolist.add(s7);
+
+		SortModel2 s8 = new SortModel2();
+		s8.setName("08月");
+		mPhotolist.add(s8);
+
+		SortModel2 s9 = new SortModel2();
+		s9.setName("09月");
+		mPhotolist.add(s9);
+
+		SortModel2 s10 = new SortModel2();
+		s10.setName("10月");
+		mPhotolist.add(s10);
+
+		SortModel2 s11 = new SortModel2();
+		s11.setName("11月");
+		mPhotolist.add(s11);
+
+		SortModel2 s12 = new SortModel2();
+		s12.setName("12月");
+		mPhotolist.add(s12);
+
 		//
+
 		for (int i = 1; i < 32; i++) {
-			mPhotolist2.add(i + "日");
+			SortModel2 s20 = new SortModel2();
+			s20.setName(i + "日");
+			mPhotolist2.add(s20);
 		}
 		//
 
@@ -178,65 +309,52 @@ public class CityPicker extends LinearLayout {
 			provincePicker.setDefault(0);
 			cityPicker.setData(mPhotolist2);
 			cityPicker.setDefault(0);
-			
+
 		}
 
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
 	public void setData2() {
 		mPhotolist.clear();
 		mPhotolist2.clear();
 		mPhotolist3.clear();
-//		mPhotolist.add("今天");
-//		mPhotolist.add("明天");
-//		mPhotolist.add("后天");
-		
+
 		counyPicker.setVisibility(View.VISIBLE);
 		provincePicker.setVisibility(View.GONE);
 		cityPicker.setVisibility(View.VISIBLE);
-		
-		
-		
+
 		//
-		mPhotolist2.add("0点");
-		mPhotolist2.add("1点");
-		mPhotolist2.add("2点");
-		mPhotolist2.add("3点");
-		mPhotolist2.add("4点");
-		mPhotolist2.add("5点");
-		mPhotolist2.add("6点");
-		mPhotolist2.add("7点");
-		mPhotolist2.add("8点");
-		mPhotolist2.add("9点");
-		mPhotolist2.add("10点");
-		mPhotolist2.add("11点");
-		mPhotolist2.add("12点");
-		mPhotolist2.add("13点");
-		mPhotolist2.add("14点");
-		mPhotolist2.add("15点");
-		mPhotolist2.add("16点");
-		mPhotolist2.add("17点");
-		mPhotolist2.add("18点");
-		mPhotolist2.add("19点");
-		mPhotolist2.add("20点");
-		mPhotolist2.add("21点");
-		mPhotolist2.add("22点");
-		mPhotolist2.add("23点");
+
+		for (int i = 0; i < 24; i++) {
+			SortModel2 s4 = new SortModel2();
+			s4.setName(i + "点");
+			mPhotolist2.add(s4);
+		}
 		//
-		mPhotolist3.add("00");
-		mPhotolist3.add("10");
-		mPhotolist3.add("20");
-		mPhotolist3.add("30");
-		mPhotolist3.add("40");
-		mPhotolist3.add("50");
+
+		SortModel2 s6 = new SortModel2();
+		s6.setName("00");
+		mPhotolist3.add(s6);
+
+		SortModel2 s7 = new SortModel2();
+		s7.setName("10");
+		mPhotolist3.add(s7);
+
+		SortModel2 s8 = new SortModel2();
+		s8.setName("20");
+		mPhotolist3.add(s8);
+
+		SortModel2 s9 = new SortModel2();
+		s9.setName("30");
+		mPhotolist3.add(s9);
+
+		SortModel2 s10 = new SortModel2();
+		s10.setName("40");
+		mPhotolist3.add(s10);
+
+		SortModel2 s11 = new SortModel2();
+		s11.setName("50");
+		mPhotolist3.add(s11);
 
 		Time t = new Time(); // or Time t=new Time("GMT+8"); 加上Time Zone资料。
 		t.setToNow(); // 取得系统时间。
@@ -248,15 +366,11 @@ public class CityPicker extends LinearLayout {
 		int second = t.second;
 
 		try {
-//			provincePicker.setData(mPhotolist);
-//			provincePicker.setDefault(0);
 			cityPicker.setData(mPhotolist2);
 			cityPicker.setDefault(8);
 			counyPicker.setData(mPhotolist3);
 			counyPicker.setDefault(3);
 		} catch (Exception e) {
-//			provincePicker.setData(mPhotolist);
-//			provincePicker.setDefault(0);
 			cityPicker.setData(mPhotolist2);
 			cityPicker.setDefault(0);
 			counyPicker.setData(mPhotolist3);
@@ -264,31 +378,6 @@ public class CityPicker extends LinearLayout {
 		}
 
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	private ArrayList<String> mPhotolist = new ArrayList<String>();
-	private ArrayList<String> mPhotolist2 = new ArrayList<String>();
-	private ArrayList<String> mPhotolist3 = new ArrayList<String>();
 
 	@Override
 	protected void onFinishInflate() {
@@ -376,6 +465,15 @@ public class CityPicker extends LinearLayout {
 		return counyPicker.getSelectedText();
 	}
 
+	public int getSelected1() {
+		return provincePicker.getSelected();
+	}
+
+	public  ArrayList<SortModel2> getPhotolist1() {
+		return mPhotolist;
+	}
+	
+	
 	public interface OnSelectingListener {
 
 		public void selected(boolean selected);

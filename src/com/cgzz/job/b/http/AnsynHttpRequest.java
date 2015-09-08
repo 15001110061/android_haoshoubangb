@@ -13,6 +13,7 @@ import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
+import cn.jpush.android.api.JPushInterface;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;
@@ -89,7 +90,7 @@ public class AnsynHttpRequest {
 								callBack.back(null, HttpStaticApi.FAILURE_HTTP,
 										i, obj, loadedtype);
 							} else if (isContinue(context, response) == -1) {
-
+								JPushInterface.stopPush(context);
 								GlobalVariables application = (GlobalVariables) context
 										.getApplicationContext();
 								application.setLogon(false);
@@ -174,7 +175,7 @@ public class AnsynHttpRequest {
 						callBack.back(null, HttpStaticApi.FAILURE_HTTP, i, obj,
 								loadedtype);
 					} else if (isContinue(context, response) == -1) {
-
+						JPushInterface.stopPush(context);
 						GlobalVariables application = (GlobalVariables) context
 								.getApplicationContext();
 						application.setLogon(false);
