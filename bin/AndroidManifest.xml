@@ -3,7 +3,7 @@
     package="com.cgzz.job.b"
     android:installLocation="auto"
     android:versionCode="12"
-    android:versionName="测试1.0-12" >
+    android:versionName="测试1.0-12" > 
 
     <uses-sdk
         android:minSdkVersion="8"
