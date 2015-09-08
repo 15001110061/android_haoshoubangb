@@ -1,0 +1,330 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_white" >
+
+    <include
+        android:id="@+id/include_stub_title"
+        layout="@layout/stub_title" />
+
+    <LinearLayout
+        android:id="@+id/ll_workcad"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/include_stub_title"
+        android:layout_marginBottom="@dimen/dd_dimen_52px"
+        android:layout_marginLeft="@dimen/dd_dimen_38px"
+        android:layout_marginRight="@dimen/dd_dimen_38px"
+        android:layout_marginTop="@dimen/dd_dimen_32px"
+        android:background="@drawable/shape_current_item_rl_bg"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dd_dimen_129px" >
+
+            <TextView
+                android:id="@+id/tv_workcard_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:text="LOGO 好帮手官方"
+                android:textColor="@color/common_white"
+                android:textSize="@dimen/dd_dimen_40px" />
+
+            <TextView
+                android:id="@+id/tv_workcard_qiehuan"
+                android:layout_width="@dimen/dd_dimen_70px"
+                android:layout_height="@dimen/dd_dimen_70px"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/icon_fanzhuan"
+                android:padding="@dimen/dd_dimen_29px"
+                android:textColor="@color/common_white"
+                android:textSize="@dimen/dd_dimen_36px" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dd_dimen_34px" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:text="工作证"
+                android:textColor="@color/common_text"
+                android:textSize="@dimen/dd_dimen_48px"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dd_dimen_41px"
+            android:gravity="center_horizontal" >
+
+            <ImageView
+                android:id="@+id/iv_workcard_touxiang"
+                android:layout_width="@dimen/dd_dimen_120px"
+                android:layout_height="@dimen/dd_dimen_120px"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_nor_user" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical" >
+
+            <com.cgzz.job.b.view.CustomerRatingBar
+                android:id="@+id/cb_workcard_car"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true" >
+            </com.cgzz.job.b.view.CustomerRatingBar>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dd_dimen_40px"
+            android:layout_marginRight="@dimen/dd_dimen_40px"
+            android:layout_weight="1"
+            android:gravity="center_vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dd_dimen_110px" >
+
+                <TextView
+                    android:id="@+id/tv_workcard_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="姓名:"
+                    android:textColor="@color/common_text"
+                    android:textSize="@dimen/dd_dimen_36px" />
+
+                <TextView
+                    android:id="@+id/tv_workcard_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/tv_workcard_3"
+                    android:layout_alignBottom="@+id/tv_workcard_3"
+                    android:layout_marginLeft="@dimen/dd_dimen_20px"
+                    android:layout_toRightOf="@+id/tv_workcard_3"
+                    android:text="小名aaaa"
+                    android:textColor="@color/common_text"
+                    android:textSize="@dimen/dd_dimen_36px" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dd_dimen_40px"
+            android:layout_marginRight="@dimen/dd_dimen_40px"
+            android:layout_weight="1"
+            android:gravity="center_vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dd_dimen_110px" >
+
+                <TextView
+                    android:id="@+id/tv_workcard_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dd_dimen_60px"
+                    android:text="年龄:"
+                    android:textColor="@color/common_text"
+                    android:textSize="@dimen/dd_dimen_36px" />
+
+                <TextView
+                    android:id="@+id/tv_workcard_age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/tv_workcard_2"
+                    android:layout_alignBottom="@+id/tv_workcard_2"
+                    android:layout_marginLeft="@dimen/dd_dimen_20px"
+                    android:layout_toRightOf="@+id/tv_workcard_2"
+                    android:text="25"
+                    android:textColor="@color/common_text"
+                    android:textSize="@dimen/dd_dimen_36px" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dd_dimen_40px"
+            android:layout_marginRight="@dimen/dd_dimen_40px"
+            android:layout_weight="1"
+            android:gravity="center_vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dd_dimen_110px" >
+
+                <TextView
+                    android:id="@+id/tv_workcard_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dd_dimen_60px"
+                    android:text="工龄:"
+                    android:textColor="@color/common_text"
+                    android:textSize="@dimen/dd_dimen_36px" />
+
+                <TextView
+                    android:id="@+id/tv_workcard_gongling"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/tv_workcard_6"
+                    android:layout_alignBottom="@+id/tv_workcard_6"
+                    android:layout_marginLeft="@dimen/dd_dimen_20px"
+                    android:layout_toRightOf="@+id/tv_workcard_6"
+                    android:text="5"
+                    android:textColor="@color/common_text"
+                    android:textSize="@dimen/dd_dimen_36px" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dd_dimen_40px"
+            android:layout_marginRight="@dimen/dd_dimen_40px"
+            android:layout_weight="1"
+            android:gravity="center_vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dd_dimen_110px" >
+
+                <TextView
+                    android:id="@+id/tv_workcard_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dd_dimen_60px"
+                    android:text="帮可号:"
+                    android:textColor="@color/common_text"
+                    android:textSize="@dimen/dd_dimen_36px" />
+
+                <TextView
+                    android:id="@+id/tv_workcard_bangkehao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/tv_workcard_4"
+                    android:layout_alignBottom="@+id/tv_workcard_4"
+                    android:layout_marginLeft="@dimen/dd_dimen_20px"
+                    android:layout_toRightOf="@+id/tv_workcard_4"
+                    android:text="110102"
+                    android:textColor="@color/common_text"
+                    android:textSize="@dimen/dd_dimen_36px" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_workcard_5"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dd_dimen_89px"
+            android:layout_alignLeft="@+id/cl_workcad_listView"
+            android:layout_alignParentBottom="true" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dd_dimen_10px"
+                android:gravity="center_vertical"
+                android:text="北京好帮手认领资质"
+                android:textColor="@color/common_white"
+                android:textSize="@dimen/dd_dimen_40px" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_workcad"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/include_stub_title"
+        android:layout_margin="@dimen/dd_dimen_52px"
+        android:layout_marginLeft="@dimen/dd_dimen_38px"
+        android:layout_marginRight="@dimen/dd_dimen_38px"
+        android:layout_marginTop="@dimen/dd_dimen_32px"
+        android:background="@color/common_grey"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <RelativeLayout
+            android:id="@+id/rl_workcard_1"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dd_dimen_129px" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:text="LOGO 好帮手官方"
+                android:textColor="@color/common_grey"
+                android:textSize="@dimen/dd_dimen_40px" />
+
+            <TextView
+                android:id="@+id/tv_workcad_spin"
+                android:layout_width="@dimen/dd_dimen_70px"
+                android:layout_height="@dimen/dd_dimen_70px"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/icon_fan"
+                android:padding="@dimen/dd_dimen_29px"
+                android:textColor="@color/common_white"
+                android:textSize="@dimen/dd_dimen_36px" />
+        </RelativeLayout>
+
+        <com.cgzz.job.b.view.CustomListView
+            android:id="@+id/cl_workcad_listView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@+id/rl_workcard_3"
+            android:layout_below="@+id/rl_workcard_1"
+            android:fadingEdge="none"
+            android:flipInterval="30"
+            android:persistentDrawingCache="animation" >
+        </com.cgzz.job.b.view.CustomListView>
+
+        <RelativeLayout
+            android:id="@+id/rl_workcard_3"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dd_dimen_89px"
+            android:layout_alignLeft="@+id/cl_workcad_listView"
+            android:layout_alignParentBottom="true" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:text="北京晨冠智创科技有限公司"
+                android:textColor="@color/common_white"
+                android:textSize="@dimen/dd_dimen_40px" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

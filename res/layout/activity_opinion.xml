@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_seting_two"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/common_grey"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/title"
+        layout="@layout/stub_title" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_marginBottom="@dimen/dd_dimen_26px"
+        android:layout_marginTop="@dimen/dd_dimen_26px"
+        android:gravity="center"
+        android:text="你的反馈是我们前进的动力:"
+        android:textColor="@color/common_message"
+        android:textSize="@dimen/dd_dimen_32px" />
+
+    <EditText
+        android:id="@+id/tv_opinion_content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv"
+        android:layout_marginLeft="@dimen/dd_dimen_20px"
+        android:layout_marginRight="@dimen/dd_dimen_20px"
+        android:background="@color/common_white"
+        android:gravity="top"
+        android:hint="请输入反馈内容"
+        android:maxLength="500"
+        android:minHeight="@dimen/dd_dimen_240px"
+        android:paddingBottom="@dimen/dd_dimen_28px"
+        android:paddingLeft="@dimen/dd_dimen_20px"
+        android:paddingTop="@dimen/dd_dimen_20px"
+        android:singleLine="false"
+        android:textColorHint="@color/common_message"
+        android:textSize="@dimen/dd_dimen_24px" />
+
+    <TextView
+        android:id="@+id/tv_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tv_opinion_content"
+        android:layout_alignRight="@+id/tv_opinion_content"
+        android:layout_marginBottom="@dimen/dd_dimen_20px"
+        android:layout_marginRight="@dimen/dd_dimen_20px"
+        android:gravity="center"
+        android:paddingLeft="@dimen/dd_dimen_2px"
+        android:text="0/500"
+        android:textColor="@color/common_message"
+        android:textSize="@dimen/dd_dimen_20px" />
+
+    <TextView
+        android:id="@+id/tv_opinion_submitted"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dd_dimen_100px"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tv_opinion_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/dd_dimen_60px"
+        android:layout_marginRight="@dimen/dd_dimen_60px"
+        android:layout_marginTop="@dimen/dd_dimen_37px"
+        android:background="@drawable/shape_home_item_tv_sign_bg"
+        android:gravity="center"
+        android:text="立即提交"
+        android:textColor="@color/common_white"
+        android:textSize="@dimen/dd_dimen_36px" />
+
+</RelativeLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <ImageButton
+        android:id="@+id/ib_dis"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#a0000000"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="#ffffff"
+        android:orientation="horizontal"
+        android:paddingTop="10dp" >
+
+        <RelativeLayout
+            android:id="@+id/relative_shortmessage"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/icon_duanxin" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv"
+                android:layout_centerHorizontal="true"
+                android:padding="5dp"
+                android:text="短信"
+                android:textColor="@color/common_message"
+                android:textSize="@dimen/dd_dimen_24px" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative_wechat"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/icon_weixinp" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv"
+                android:layout_centerHorizontal="true"
+                android:padding="5dp"
+                android:text="微信好友"
+                android:textColor="@color/common_message"
+                android:textSize="@dimen/dd_dimen_24px" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative_wemoment"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/icon_weixinpq" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv"
+                android:layout_centerHorizontal="true"
+                android:padding="5dp"
+                android:text="朋友圈"
+                android:textColor="@color/common_message"
+                android:textSize="@dimen/dd_dimen_24px" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/common_grey" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dd_dimen_152px"
+        android:layout_marginLeft="@dimen/dd_dimen_20px"
+        android:layout_marginRight="@dimen/dd_dimen_20px"
+        android:layout_marginTop="@dimen/dd_dimen_25px"
+        android:background="@drawable/shape_current_item_rl_bg" >
+
+        <ImageView
+            android:id="@+id/iv_collection_picture"
+            android:layout_width="@dimen/dd_dimen_100px"
+            android:layout_height="@dimen/dd_dimen_100px"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="@dimen/dd_dimen_26px"
+            android:layout_marginLeft="@dimen/dd_dimen_26px"
+            android:layout_marginTop="@dimen/dd_dimen_26px"
+            android:scaleType="fitXY"
+            android:src="@drawable/image_moren_pop" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dd_dimen_38px"
+            android:layout_marginTop="@dimen/dd_dimen_39px"
+            android:layout_toRightOf="@+id/iv_collection_picture"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:id="@+id/tv_review_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/dd_dimen_30px"
+                android:gravity="center_vertical"
+                android:text="小名"
+                android:textColor="@color/common_666666"
+                android:textSize="@dimen/dd_dimen_24px" />
+
+            <com.cgzz.job.b.view.CustomerRatingBarGo
+                android:id="@+id/bar_review_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_review_name"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dd_dimen_30px"
+                android:layout_marginTop="@dimen/dd_dimen_15px" />
+        </RelativeLayout>
+
+        <CheckBox
+            android:id="@+id/item_cb"
+            style="@style/CustomCheckboxTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dd_dimen_26px"
+         
+            android:gravity="center" />
+    </RelativeLayout>
+
+</RelativeLayout>

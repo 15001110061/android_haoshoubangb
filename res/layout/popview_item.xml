@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <ImageButton
+        android:id="@+id/ib_dis"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#a0000000"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_current_room"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/listView_select"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:background="@color/common_white"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:text="最低单价会随市场的波动而变化"
+            android:textColor="@color/common_666666"
+            android:textSize="@dimen/dd_dimen_36px"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/tv_current_room2"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dd_dimen_1px"
+            android:layout_alignParentTop="true"
+            android:background="@color/devide_line"
+            android:visibility="gone" />
+
+        <com.cgzz.job.b.view.CustomListView
+            android:id="@+id/listView_select"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dd_dimen_320px"
+            android:background="@color/common_white"
+            android:cacheColorHint="#00000000" >
+        </com.cgzz.job.b.view.CustomListView>
+
+        <TextView
+            android:id="@+id/tv_current_room3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/listView_select"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:background="@color/common_white"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:text="清除"
+            android:textColor="@color/common_red"
+            android:textSize="@dimen/dd_dimen_30px"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</RelativeLayout>

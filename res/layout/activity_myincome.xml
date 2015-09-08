@@ -1,0 +1,172 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_seting_two"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/common_grey" >
+
+    <include
+        android:id="@+id/include_stub_title"
+        layout="@layout/stub_title" />
+
+    <LinearLayout
+        android:id="@+id/two"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/include_stub_title"
+        android:layout_marginLeft="@dimen/dd_dimen_15px"
+        android:layout_marginRight="@dimen/dd_dimen_15px"
+        android:layout_marginTop="@dimen/dd_dimen_20px"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dd_dimen_96px"
+            android:background="@color/common_222231" >
+
+            <ImageView
+                android:id="@+id/iv_4"
+                android:layout_width="@dimen/dd_dimen_60px"
+                android:layout_height="@dimen/dd_dimen_60px"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dd_dimen_23px"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/icon_zichan" />
+
+            <TextView
+                android:id="@+id/iv_my_income"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dd_dimen_16px"
+                android:layout_toRightOf="@id/iv_4"
+                android:gravity="center_vertical"
+                android:text="总资产"
+                android:textColor="@color/common_white"
+                android:textSize="@dimen/dd_dimen_36px" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dd_dimen_20px"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitXY"
+                android:src="@drawable/icons_arrow" />
+
+            <TextView
+                android:id="@+id/tv_myincome_zichan"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="@dimen/dd_dimen_20px"
+                android:layout_toLeftOf="@+id/imageView2"
+                android:gravity="center_vertical"
+                android:text="000"
+                android:textColor="@color/common_yellow"
+                android:textSize="@dimen/dd_dimen_48px" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dd_dimen_96px"
+            android:layout_marginTop="@dimen/dd_dimen_20px"
+            android:background="@color/common_222231" >
+
+            <ImageView
+                android:id="@+id/iv_2"
+                android:layout_width="@dimen/dd_dimen_60px"
+                android:layout_height="@dimen/dd_dimen_60px"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dd_dimen_23px"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/icon_zongjifen" />
+
+            <TextView
+                android:id="@+id/iv_my_collection"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dd_dimen_16px"
+                android:layout_toRightOf="@id/iv_2"
+                android:gravity="center_vertical"
+                android:text="总积分"
+                android:textColor="@color/common_white"
+                android:textSize="@dimen/dd_dimen_36px" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dd_dimen_20px"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitXY"
+                android:src="@drawable/icons_arrow" />
+
+            <TextView
+                android:id="@+id/tv_myincome_jifen"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="@dimen/dd_dimen_20px"
+                android:layout_toLeftOf="@+id/imageView1"
+                android:gravity="center_vertical"
+                android:text="000"
+                android:textColor="@color/common_yellow"
+                android:textSize="@dimen/dd_dimen_48px" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dd_dimen_1px"
+            android:background="@color/common_CCCCCC"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dd_dimen_96px"
+            android:layout_marginLeft="@dimen/dd_dimen_32px"
+            android:layout_marginRight="@dimen/dd_dimen_32px"
+            android:visibility="gone" >
+
+            <ImageView
+                android:id="@+id/iv_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/icon_xiaoxi" />
+
+            <TextView
+                android:id="@+id/iv_my_news"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dd_dimen_20px"
+                android:layout_toRightOf="@id/iv_3"
+                android:gravity="center_vertical"
+                android:text="消息中心"
+                android:textColor="@color/common_text" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/two"
+        android:layout_marginTop="@dimen/dd_dimen_36px"
+        android:orientation="vertical" >
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:flipInterval="30"
+            android:persistentDrawingCache="animation" >
+        </android.support.v4.view.ViewPager>
+    </RelativeLayout>
+
+</RelativeLayout>

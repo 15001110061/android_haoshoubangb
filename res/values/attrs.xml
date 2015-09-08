@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <declare-styleable name="ScrollerNumberPicker">
+        <attr name="normalTextColor" format="color" />
+        <attr name="normalTextSize" format="dimension" />
+        <attr name="selecredTextColor" format="color" />
+        <attr name="selecredTextSize" format="dimension" />
+        <attr name="unitHight" format="dimension" />
+        <attr name="itemNumber" format="integer"/>
+        <attr name="lineColor" format="color" />
+        <attr name="maskHight" format="dimension"/>
+        <attr name="noEmpty" format="boolean"/>
+        <attr name="isEnable" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="roundedimageview">
+        <attr name="border_thickness" format="dimension" />
+        <attr name="border_inside_color" format="color" />
+        <attr name="border_outside_color" format="color"></attr>
+    </declare-styleable>
+    <!-- 以下属性用于界面上显示车主和乘客端时,某些图标,文字和颜色等表现出差异的地方. -->
+    <!--  -->
+    <attr name="unify_orange" format="reference" />
+    <!-- 标题栏颜色 -->
+    <attr name="title_background" format="reference" />
+    <!-- 录音的标志 -->
+    <!-- 菜单按钮 -->
+
+    <!-- 路线按钮 -->
+    <!-- 群组按钮 -->
+    <!-- 消息按钮 -->
+    <!-- 距离和时间的小车背景 -->
+    <!-- 位置同上,乘客数量 -->
+    <!-- 终点的图标 -->
+    <!-- 终点文字的颜色 -->
+    <attr name="color_end_point" format="reference" />
+    <!-- 输入目的地界面的地图取点图标 -->
+    <!-- 输入目的地界面的星星图标 -->
+    <!-- 发布界面的出发时间图标 -->
+    <!-- 发布界面的座位数图标 -->
+    <!-- 发布界面的发布到图标 -->
+    <!-- 发布界面的价格图标 -->
+    <!-- 匹配结果界面的按钮 -->
+    <attr name="btn_left_selector" format="reference"></attr>
+    <attr name="btn_right_selector" format="reference"></attr>
+
+    <!-- 群组界面的标题线 -->
+    <attr name="group_title_line" format="reference"></attr>
+    <!-- 群组界面的我的群组，状态 -->
+    <attr name="my_group_textcolor" format="reference"></attr>
+    <!-- 拼车路线界面的终点图片 -->
+
+    <!-- 用户信息界面的性别图标 -->
+    <!-- ===================以下为游戏图标========================= -->
+    <!-- 游戏界面的摇一摇图标 -->
+    <!-- 我的路线里的tab颜色,群组界面tab颜色 -->
+    <attr name="tv_black_darkgreen_selector" format="reference" />
+    <!-- 等级 -->
+    <!-- 电话的图标 -->
+    <!-- 支付与评价界面的背景 -->
+    <!-- 我的路线中的tab标签 -->
+    <attr name="myroute_tab_1" format="reference" />
+    <attr name="myroute_tab_2" format="reference" />
+    <attr name="myroute_tab_3" format="reference" />
+    <attr name="myroute_tab_4" format="reference" />
+    <!-- 群聊界面的背景气泡 -->
+    <!-- 发布界面选择时间的日期第一条显示内容 -->
+    <attr name="dialog_publish_time_now" format="reference" />
+    <!-- 首页界面的附近有多少名乘客/车主的提示 -->
+    <attr name="home_neaby_passenger_tips" format="reference"></attr>
+    <!-- 发布成功后的提示 -->
+    <attr name="publish_suc_tips" format="reference"></attr>
+    <!-- 取消订单原因 -->
+    <attr name="cancel_order_reason_1" format="reference"></attr>
+    <attr name="cancel_order_reason_2" format="reference"></attr>
+    <attr name="cancel_order_reason_3" format="reference"></attr>
+    <!-- 语音识别图标 -->
+
+</resources>

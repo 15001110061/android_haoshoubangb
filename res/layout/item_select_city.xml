@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+>
+
+    <TextView
+        android:id="@+id/catalog"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1.0"
+        android:background="@color/common_grey"
+        android:paddingBottom="@dimen/dd_dimen_10px"
+        android:paddingLeft="@dimen/dd_dimen_30px"
+        android:paddingTop="@dimen/dd_dimen_10px"
+        android:text="A"
+        android:textColor="#000000"
+        android:textSize="@dimen/dd_dimen_30px" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1.0"
+        android:background="@drawable/list_item_bg"
+        android:gravity="center_vertical"
+        android:paddingBottom="@dimen/dd_dimen_20px"
+        android:paddingLeft="@dimen/dd_dimen_30px"
+        android:paddingTop="@dimen/dd_dimen_20px"
+        android:text="hhhh"
+        android:textColor="@color/common_text"
+        android:textSize="@dimen/dd_dimen_36px" />
+
+    <View
+        android:id="@+id/layout_line"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dd_dimen_1px"
+        android:background="@color/common_CCCCCC" />
+
+</LinearLayout>

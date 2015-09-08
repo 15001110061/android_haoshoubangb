@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/rating_one"
+        android:layout_width="@dimen/dd_dimen_35px"
+        android:layout_height="@dimen/dd_dimen_35px"
+        android:background="@drawable/icons_star_hollow" />
+
+    <ImageView
+        android:id="@+id/rating_two"
+        android:layout_width="@dimen/dd_dimen_35px"
+        android:layout_height="@dimen/dd_dimen_35px"
+        android:layout_marginLeft="@dimen/dd_dimen_10px"
+        android:background="@drawable/icons_star_hollow"
+        android:paddingLeft="10dp" />
+
+    <ImageView
+        android:id="@+id/rating_three"
+        android:layout_width="@dimen/dd_dimen_35px"
+        android:layout_height="@dimen/dd_dimen_35px"
+        android:layout_marginLeft="@dimen/dd_dimen_10px"
+        android:background="@drawable/icons_star_hollow" />
+
+    <ImageView
+        android:id="@+id/rating_four"
+        android:layout_width="@dimen/dd_dimen_35px"
+        android:layout_height="@dimen/dd_dimen_35px"
+        android:layout_marginLeft="@dimen/dd_dimen_10px"
+        android:background="@drawable/icons_star_hollow" />
+
+    <ImageView
+        android:id="@+id/rating_five"
+        android:layout_width="@dimen/dd_dimen_35px"
+        android:layout_height="@dimen/dd_dimen_35px"
+        android:layout_marginLeft="@dimen/dd_dimen_10px"
+        android:background="@drawable/icons_star_hollow" />
+
+</LinearLayout>

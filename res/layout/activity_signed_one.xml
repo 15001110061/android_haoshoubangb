@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/common_white" >
+
+    <include
+        android:id="@+id/include_stub_title"
+        layout="@layout/stub_title" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/include_stub_title"
+        android:background="@color/common_red"
+        android:visibility="gone" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="《好手帮用户使用协议》"
+            android:textColor="@color/common_yellow"
+            android:textSize="@dimen/dd_dimen_26px" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relativeLayout2"
+        android:layout_marginTop="@dimen/dd_dimen_44px"
+        android:background="@color/common_white" >
+
+        <RelativeLayout
+            android:id="@+id/layout_login"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dd_dimen_100px"
+            android:layout_marginTop="@dimen/dd_dimen_20px"
+            android:background="@color/common_white"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="@dimen/dd_dimen_100px"
+                android:layout_height="@dimen/dd_dimen_100px"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_sig_one" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="30dp"
+                android:layout_toRightOf="@+id/imageView1"
+                android:gravity="center"
+                android:text="验证手机号码"
+                android:textColor="@color/common_yellow"
+                android:textSize="@dimen/dd_dimen_32px" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_username"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dd_dimen_80px"
+            android:layout_below="@id/layout_login"
+            android:layout_marginLeft="@dimen/dd_dimen_37px"
+            android:layout_marginRight="@dimen/dd_dimen_37px"
+            android:layout_marginTop="@dimen/dd_dimen_57px"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:id="@+id/rl_countdown"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <EditText
+                    android:id="@+id/et_signed_phones"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/shape_current_item_et_bg"
+                    android:hint="手机号"
+                    android:inputType="number"
+                    android:maxEms="11"
+                    android:paddingLeft="@dimen/dd_dimen_20px"
+                    android:singleLine="true"
+                    android:textColor="@color/common_text"
+                    android:textSize="@dimen/dd_dimen_32px" >
+                </EditText>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/layout_line"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dd_dimen_1px"
+            android:layout_below="@+id/layout_username"
+            android:layout_marginLeft="@dimen/dd_dimen_37px"
+            android:layout_marginRight="@dimen/dd_dimen_37px"
+            android:layout_marginTop="@dimen/dd_dimen_20px"
+            android:background="@color/common_CCCCCC"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/ll_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dd_dimen_80px"
+            android:layout_below="@+id/layout_username"
+            android:layout_marginLeft="@dimen/dd_dimen_37px"
+            android:layout_marginRight="@dimen/dd_dimen_37px"
+            android:layout_marginTop="@dimen/dd_dimen_46px"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:id="@+id/rl_countdown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <EditText
+                    android:id="@+id/et_signed_captchas"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/shape_current_item_et_bg"
+                    android:hint="验证码"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:paddingLeft="@dimen/dd_dimen_20px"
+                    android:singleLine="true"
+                    android:textColor="@color/common_text"
+                    android:textSize="@dimen/dd_dimen_32px" />
+
+                <TextView
+                    android:id="@+id/et_signed_send_captchas_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/shape_current_signed_rls_bg"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dd_dimen_20px"
+                    android:paddingRight="@dimen/dd_dimen_20px"
+                    android:text="发送验证码"
+                    android:textColor="@color/common_white"
+                    android:textSize="@dimen/dd_dimen_30px" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/layout_line2"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dd_dimen_1px"
+            android:layout_below="@+id/ll_layout"
+            android:layout_marginLeft="@dimen/dd_dimen_37px"
+            android:layout_marginRight="@dimen/dd_dimen_37px"
+            android:layout_marginTop="@dimen/dd_dimen_20px"
+            android:background="@color/common_CCCCCC"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/ll_layout3"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dd_dimen_80px"
+            android:layout_below="@+id/layout_line2"
+            android:layout_marginLeft="@dimen/dd_dimen_37px"
+            android:layout_marginRight="@dimen/dd_dimen_37px"
+            android:layout_marginTop="@dimen/dd_dimen_26px"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/et_signed_passwords"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/shape_current_item_et_bg"
+                android:digits="0123456789abcdefghigkjlmnopqrstuvwxyz"
+                android:hint="密    码"
+                android:inputType="textPassword"
+                android:maxLength="14"
+                android:paddingLeft="@dimen/dd_dimen_20px"
+                android:singleLine="true"
+                android:textColor="@color/common_text"
+                android:textSize="@dimen/dd_dimen_32px" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/layout_line4"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dd_dimen_1px"
+            android:layout_below="@+id/ll_layout3"
+            android:layout_marginLeft="@dimen/dd_dimen_37px"
+            android:layout_marginRight="@dimen/dd_dimen_37px"
+            android:layout_marginTop="@dimen/dd_dimen_20px"
+            android:background="@color/common_CCCCCC"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dd_dimen_1px"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/ll_layout"
+            android:layout_marginLeft="@dimen/dd_dimen_37px"
+            android:layout_marginRight="@dimen/dd_dimen_37px"
+            android:layout_marginTop="@dimen/dd_dimen_20px"
+            android:background="@color/common_CCCCCC"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_signed_next"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dd_dimen_100px"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tv_signed_forgot"
+        android:layout_marginLeft="@dimen/dd_dimen_60px"
+        android:layout_marginRight="@dimen/dd_dimen_60px"
+        android:background="@drawable/shape_home_item_tv_sign_bg"
+        android:gravity="center"
+        android:text="下一步"
+        android:textColor="@color/common_white"
+        android:textSize="@dimen/dd_dimen_32px" />
+
+    <TextView
+        android:id="@+id/tv_signed_deal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_signed_forgot"
+        android:layout_alignBottom="@+id/tv_signed_forgot"
+        android:layout_toRightOf="@+id/tv_signed_forgot"
+        android:gravity="center"
+        android:text="《好手帮用户使用协议》"
+        android:textColor="@color/common_yellow"
+        android:textSize="@dimen/dd_dimen_26px" />
+
+    <TextView
+        android:id="@+id/tv_signed_forgot"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dd_dimen_100px"
+        android:layout_alignLeft="@+id/tv_signed_next"
+        android:layout_below="@+id/relativeLayout1"
+        android:gravity="center"
+        android:text="完成注册,表示您已同意"
+        android:textColor="@color/common_CCCCCC"
+        android:textSize="@dimen/dd_dimen_26px" />
+
+</RelativeLayout>

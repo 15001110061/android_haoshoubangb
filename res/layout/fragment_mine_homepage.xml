@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:background="@color/common_0d0c1e"
+    android:paddingBottom="@dimen/dd_dimen_20px" >
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:background="@color/common_222231"
+        android:gravity="center_vertical" >
+
+        <LinearLayout
+            android:id="@+id/ll_title_left"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:gravity="center_vertical|left"
+            android:minWidth="@dimen/dd_dimen_40px"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_title_left"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="@dimen/dd_dimen_20px"
+                android:text="选择城市"
+                android:textColor="@color/common_white"
+                android:textSize="@dimen/dd_dimen_32px" />
+
+            <ImageView
+                android:id="@+id/iv_title_left"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:paddingBottom="@dimen/dd_dimen_20px"
+                android:paddingRight="@dimen/dd_dimen_20px"
+                  android:paddingLeft="@dimen/dd_dimen_20px"
+                android:paddingTop="@dimen/dd_dimen_20px"
+                android:src="@drawable/ison_jiantoucity" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_title_right"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:gravity="center_vertical|right"
+            android:minWidth="@dimen/dd_dimen_40px"
+            android:orientation="horizontal"
+            android:visibility="visible" >
+
+            <ImageView
+                android:id="@+id/iv_title_right"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:padding="@dimen/dd_dimen_20px"
+                android:src="@drawable/icon_shuaxin" />
+
+            <TextView
+                android:id="@+id/tv_title_right"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical|right"
+                android:paddingRight="@dimen/dd_dimen_20px"
+                android:text="New Text"
+                android:textColor="@color/common_white"
+                android:textSize="@dimen/dd_dimen_32px"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dd_dimen_26px"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:singleLine="true"
+            android:text="好手帮"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/dd_dimen_32px" />
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/rl_title"
+        android:clipToPadding="false"
+        android:paddingLeft="@dimen/dd_dimen_80px"
+        android:paddingRight="@dimen/dd_dimen_80px" >
+    </android.support.v4.view.ViewPager>
+
+    <TextView
+        android:id="@+id/tv_home_item_page"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="@dimen/dd_dimen_150px"
+        android:gravity="center"
+        android:text="0/0"
+        android:textColor="@color/common_text"
+        android:textSize="@dimen/dd_dimen_20px"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_home_item_sign"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dd_dimen_100px"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/dd_dimen_60px"
+        android:layout_marginRight="@dimen/dd_dimen_60px"
+        android:background="@drawable/shape_home_item_tv_sign_bg"
+        android:gravity="center"
+        android:text="抢先报名"
+        android:textColor="@color/common_white"
+        android:textSize="@dimen/dd_dimen_36px" />
+
+</RelativeLayout>

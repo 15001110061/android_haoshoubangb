@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/tabhost"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/common_grey"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_weight="1.0" />
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.0"
+            android:visibility="gone" />
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+                   android:background="@color/common_white"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:id="@+id/buttom_bar_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <RelativeLayout style="@style/ButtomBar" >
+
+                    <ImageButton
+                        android:id="@+id/buttom_1" 
+                        style="@style/ButtomBarImgBtn"
+                        android:background="@drawable/main_homepage_bar"
+                        android:contentDescription="@string/app_name" />
+                </RelativeLayout>
+ 
+                <RelativeLayout style="@style/ButtomBar" >
+
+                    <ImageButton
+                        android:id="@+id/buttom_2"
+                        style="@style/ButtomBarImgBtn"
+                        android:background="@drawable/main_drders_bar"
+                        android:contentDescription="@string/app_name" />
+                </RelativeLayout>
+
+                <RelativeLayout style="@style/ButtomBar" >
+
+                    <ImageButton
+                        android:id="@+id/buttom_3"
+                        style="@style/ButtomBarImgBtn"
+                        android:background="@drawable/main_income_bar"
+                        android:contentDescription="@string/app_name" />
+                </RelativeLayout>
+
+                <RelativeLayout style="@style/ButtomBar" >
+
+                    <ImageButton
+                        android:id="@+id/buttom_4"
+                        style="@style/ButtomBarImgBtn"
+                        android:background="@drawable/main_my_bar"
+                        android:contentDescription="@string/app_name" />
+                </RelativeLayout>
+            </LinearLayout>
+ 
+            <View
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_above="@id/buttom_bar_group"
+                android:background="@color/devide_line" />
+
+            <FrameLayout
+                android:id="@+id/fl_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/line" />
+        </FrameLayout>
+    </LinearLayout>
+
+</TabHost>

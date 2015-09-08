@@ -1,0 +1,200 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/common_grey"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:background="@color/common_222231"
+        android:gravity="center_vertical" >
+
+        <LinearLayout
+            android:id="@+id/ll_title_left"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:gravity="center_vertical|left"
+            android:minWidth="@dimen/dd_dimen_40px"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/tv_title_left"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="@dimen/dd_dimen_20px"
+                android:text="选择城市"
+                android:textColor="@color/common_yellow"
+                android:textSize="@dimen/dd_dimen_32px" />
+
+            <ImageView
+                android:id="@+id/iv_title_left"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:paddingBottom="@dimen/dd_dimen_20px"
+                android:paddingLeft="@dimen/dd_dimen_2px"
+                android:paddingRight="@dimen/dd_dimen_20px"
+                android:paddingTop="@dimen/dd_dimen_20px"
+                android:src="@drawable/ison_jiantoucity" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_title_right"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:gravity="center_vertical|right"
+            android:minWidth="@dimen/dd_dimen_40px"
+            android:orientation="horizontal"
+            android:visibility="visible" >
+
+            <ImageView
+                android:id="@+id/iv_title_right"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:padding="@dimen/dd_dimen_20px"
+                android:src="@drawable/icon_shuaxin"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_title_right"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical|right"
+                android:paddingRight="@dimen/dd_dimen_20px"
+                android:text="New Text"
+                android:textColor="@color/common_white"
+                android:textSize="@dimen/dd_dimen_32px"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dd_dimen_26px"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:singleLine="true"
+            android:text="好手帮"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/dd_dimen_32px" />
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dd_dimen_305px"
+        android:layout_below="@+id/rl_title"
+        android:background="@drawable/icon_loadfailed_bg"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/ll_scroll"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/vp"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/dd_dimen_10px"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="visible" >
+    </LinearLayout>
+
+    <com.cgzz.job.b.view.ReboundScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/vp"
+        android:fadingEdge="none"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/rl_home_one"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/common_f37491"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/dd_dimen_20px"
+                android:paddingTop="@dimen/dd_dimen_20px"
+                android:visibility="gone" >
+
+                <TextView
+                    android:id="@+id/tv_home_service1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:text="当前有超过"
+                    android:textColor="@color/common_white"
+                    android:textSize="@dimen/dd_dimen_36px" />
+
+                <TextView
+                    android:id="@+id/tv_home_service"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/common_white"
+                    android:textSize="@dimen/dd_dimen_80px" />
+
+                <TextView
+                    android:id="@+id/tv_home_service2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:text="人可以提供服务"
+                    android:textColor="@color/common_white"
+                    android:textSize="@dimen/dd_dimen_36px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rl_home_two"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/common_f37491"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/dd_dimen_20px"
+                android:paddingTop="@dimen/dd_dimen_20px" >
+
+                <TextView
+                    android:id="@+id/tv_home_denglu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:text="点击登录"
+                    android:textColor="@color/common_white"
+                    android:textSize="@dimen/dd_dimen_36px" />
+            </LinearLayout>
+
+            <com.cgzz.job.b.view.GridHomeView
+                android:id="@+id/gridview"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="@dimen/dd_dimen_20px"
+                android:background="@color/common_white"
+                android:horizontalSpacing="0.0dip"
+                android:listSelector="@null"
+                android:numColumns="2"
+                android:scrollbars="none"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="0.0dip" />
+        </LinearLayout>
+    </com.cgzz.job.b.view.ReboundScrollView>
+
+</RelativeLayout>

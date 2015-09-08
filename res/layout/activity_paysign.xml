@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/common_grey" >
+
+    <include
+        android:id="@+id/include_stub_title"
+        layout="@layout/stub_title" />
+
+    <TextView
+        android:id="@+id/tv_paycash_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/include_stub_title"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/icon_qianyues"
+        android:gravity="center"
+        android:textSize="@dimen/dd_dimen_24px" />
+
+    <TextView
+        android:id="@+id/tv_paycash_title1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_paycash_img"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="尊敬的签约客户,您好"
+        android:textColor="@color/common_text"
+        android:textSize="@dimen/dd_dimen_30px" />
+
+    <TextView
+        android:id="@+id/tv_paycash_title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_paycash_title1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dd_dimen_40px"
+        android:gravity="center"
+        android:text="如果您需要继续履行合同完成此单交易"
+        android:textColor="@color/common_text"
+        android:textSize="@dimen/dd_dimen_24px" />
+
+    <TextView
+        android:id="@+id/tv_paycash_title3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_paycash_title2"
+        android:layout_centerHorizontal="true"
+        android:text="请点击下方按钮完成"
+        android:textColor="@color/common_text"
+        android:textSize="@dimen/dd_dimen_24px" />
+
+    <TextView
+        android:id="@+id/btn_shanchu"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dd_dimen_77px"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tv_paycash_title3"
+        android:layout_marginBottom="@dimen/dd_dimen_20px"
+        android:layout_marginLeft="@dimen/dd_dimen_20px"
+        android:layout_marginRight="@dimen/dd_dimen_20px"
+        android:layout_marginTop="@dimen/dd_dimen_109px"
+        android:background="@drawable/shape_home_item_tv_sign_bg"
+        android:gravity="center"
+        android:text="完成支付"
+        android:textColor="@color/common_white"
+        android:textSize="@dimen/dd_dimen_30px" />
+
+</RelativeLayout>

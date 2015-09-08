@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/common_grey" >
+
+       <include
+        android:id="@+id/include_stub_title"
+        layout="@layout/stub_title" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dd_dimen_80px"
+        android:layout_below="@id/include_stub_title"
+        android:background="@color/common_white"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tv_route_tab_invite"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="全部"
+            android:textColor="@color/common_text"
+            android:textSize="@dimen/dd_dimen_32px" />
+
+        <View
+            android:layout_width="@dimen/dd_dimen_1px"
+            android:layout_height="@dimen/dd_dimen_20px"
+            android:layout_gravity="center_vertical"
+            android:background="@color/devide_line" />
+
+        <TextView
+            android:id="@+id/tv_route_tab_apply"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="已同意"
+            android:textColor="@color/common_text"
+            android:textSize="@dimen/dd_dimen_32px" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_line"
+        android:layout_width="@dimen/dd_dimen_100px"
+        android:layout_height="@dimen/dd_dimen_5px"
+        android:layout_below="@+id/linearLayout1"
+        android:src="@color/common_yellow" />
+
+    
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_line"
+        android:layout_marginTop="@dimen/dd_dimen_9px"
+        android:orientation="vertical" >
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:flipInterval="30"
+            android:persistentDrawingCache="animation" >
+        </android.support.v4.view.ViewPager>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 有保险 -->
+    <!-- 按钮按下 -->
+    <item android:state_pressed="true"><shape android:shape="rectangle">
+            <corners android:radius="5dp" />
+
+            <gradient android:endColor="#f8a8a9" android:startColor="#f8a8a9" android:type="linear" />
+
+            <padding android:bottom="1dp" android:left="3dp" android:right="3dp" android:top="1dp" />
+
+            <stroke android:width="1dp" android:color="#c53436" />
+        </shape></item>
+    <item> <!-- 按钮默认 -->
+<shape android:shape="rectangle">
+
+            <!-- 四个角的角度 -->
+            <corners android:radius="5dp" />
+
+            <gradient android:endColor="#f8a8a9" android:startColor="#f8a8a9" android:type="linear" />
+
+            <padding android:bottom="1dp" android:left="3dp" android:right="3dp" android:top="1dp" />
+
+            <!-- 颜色及边框宽度 -->
+            <stroke android:width="1dp" android:color="#c53436" />
+        </shape></item>
+
+</selector>

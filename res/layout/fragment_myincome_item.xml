@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/common_white" >
+
+    <RelativeLayout
+        android:id="@+id/rl_home_one"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+           android:minHeight="@dimen/dd_dimen_50px"
+        android:background="@color/common_grey" >
+
+        <TextView
+            android:id="@+id/tv_home_item_openings3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="@dimen/dd_dimen_5px"
+            android:layout_marginTop="@dimen/dd_dimen_5px"
+            android:layout_weight="1"
+            android:text="2015"
+            android:textColor="@color/common_CCCCCC"
+            android:textSize="@dimen/dd_dimen_30px" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dd_dimen_120px"
+        android:layout_below="@id/rl_home_one"
+        android:layout_marginLeft="@dimen/dd_dimen_30px"
+        android:layout_marginRight="@dimen/dd_dimen_30px" >
+
+        <RelativeLayout
+            android:id="@+id/rl_home_two"
+            android:layout_width="@dimen/dd_dimen_80px"
+            android:layout_height="@dimen/dd_dimen_80px"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:gravity="center" >
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/icon_shouru_yuan" />
+
+            <TextView
+                android:id="@+id/tv_home_item_openings2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:text="20"
+                android:textColor="@color/common_white"
+                android:textSize="@dimen/dd_dimen_36px" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_collection_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dd_dimen_24px"
+            android:layout_toRightOf="@+id/rl_home_two"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:gravity="center_vertical"
+                android:text="总共接了"
+                android:textColor="@color/common_text"
+                android:textSize="@dimen/dd_dimen_30px" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_myincome_peonumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/rl_collection_one"
+            android:layout_toRightOf="@+id/rl_collection_one"
+            android:gravity="center_vertical"
+            android:text="100"
+            android:textColor="@color/common_yellow"
+            android:textSize="@dimen/dd_dimen_30px" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tv_myincome_peonumber"
+            android:layout_alignBottom="@+id/tv_myincome_peonumber"
+            android:layout_toRightOf="@+id/tv_myincome_peonumber"
+            android:gravity="center_vertical"
+            android:text="次,赚了"
+            android:textColor="@color/common_text"
+            android:textSize="@dimen/dd_dimen_30px" />
+
+        <TextView
+            android:id="@+id/tv_myincome_peonumber2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:text="5000"
+            android:textColor="@color/common_yellow"
+            android:textSize="@dimen/dd_dimen_36px" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dd_dimen_1px"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/relativeLayout1"
+        android:layout_marginLeft="@dimen/dd_dimen_144px"
+        android:background="@color/devide_line" />
+
+</RelativeLayout>

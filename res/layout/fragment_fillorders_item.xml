@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/common_grey" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dd_dimen_20px"
+        android:layout_marginRight="@dimen/dd_dimen_20px"
+        android:layout_marginTop="@dimen/dd_dimen_25px"
+        android:background="@drawable/shape_current_item_rl_bg"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dd_dimen_80px"
+            android:layout_marginLeft="@dimen/dd_dimen_20px"
+            android:layout_marginRight="@dimen/dd_dimen_20px" >
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/dd_dimen_1px"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:background="@color/devide_line" />
+            <TextView
+                android:id="@+id/tv_fillorders_state "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="订单状态"
+                android:textColor="@color/common_yellow"
+                android:textSize="@dimen/dd_dimen_24px" />
+
+            <TextView
+                android:id="@+id/tv_fillorders_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/tv_fillorders_state "
+                android:layout_alignBottom="@+id/tv_fillorders_state "
+                android:layout_alignParentLeft="true"
+                android:ellipsize="end"
+                android:maxEms="10"
+                android:singleLine="true"
+                android:text="姓名"
+                android:textColor="@color/common_text"
+                android:textSize="@dimen/dd_dimen_24px" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dd_dimen_20px"
+            android:layout_marginRight="@dimen/dd_dimen_20px" >
+
+            <ImageView
+                android:id="@+id/tv_fillorders_picture"
+                android:layout_width="@dimen/dd_dimen_214px"
+                android:layout_height="@dimen/dd_dimen_145px"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_nor_user" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_marginLeft="@dimen/dd_dimen_34px"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dd_dimen_20px"
+                   android:paddingBottom="@dimen/dd_dimen_20px"
+                android:layout_toRightOf="@+id/tv_fillorders_picture"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tv_fillorders_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="11111"
+                    android:textColor="@color/common_text"
+                    android:textSize="@dimen/dd_dimen_24px" />
+
+                <TextView
+                    android:id="@+id/tv_fillorders_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dd_dimen_20px"
+                    android:singleLine="true"
+                    android:text="22222"
+                    android:textColor="@color/common_text"
+                    android:textSize="@dimen/dd_dimen_24px" />
+
+                <TextView
+                    android:id="@+id/tv_fillorders_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/dd_dimen_20px"
+                    android:text="33333"
+                    android:textColor="@color/common_text"
+                    android:textSize="@dimen/dd_dimen_24px" />
+                
+                
+                <TextView       android:id="@+id/tv_fillorders_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/dd_dimen_20px"
+                    android:text="444444"
+                    android:textColor="@color/common_text"
+                    android:textSize="@dimen/dd_dimen_24px" />
+                
+                  <TextView
+                        android:id="@+id/tv_fillorders_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/dd_dimen_20px"
+                    android:text="555555"
+                    android:textColor="@color/common_text"
+                    android:textSize="@dimen/dd_dimen_24px" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/common_grey" >
+
+    <include
+        android:id="@+id/include_stub_title"
+        layout="@layout/stub_title" />
+
+    <TextView
+        android:id="@+id/tv_paycash_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/include_stub_title"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/icon_yinhangka"
+        android:gravity="center"
+        android:textSize="@dimen/dd_dimen_24px" />
+
+    <TextView
+        android:id="@+id/tv_paycash_title1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_paycash_img"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:visibility="invisible"
+        android:text="请在7个工作日之内向以下账户转账"
+        android:textColor="@color/common_666666"
+        android:textSize="@dimen/dd_dimen_24px" />
+
+    <TextView
+        android:id="@+id/tv_paycash_title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_paycash_title1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/dd_dimen_50px"
+        android:layout_marginTop="@dimen/dd_dimen_25px"
+        android:gravity="center"
+        android:text="￥0"
+        android:textColor="@color/common_text"
+        android:textSize="@dimen/dd_dimen_36px" />
+
+    <RelativeLayout
+        android:id="@+id/two"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dd_dimen_288px"
+        android:layout_below="@id/tv_paycash_title2"
+        android:layout_margin="@dimen/dd_dimen_20px"
+        android:background="@drawable/shape_current_item_rl_bg"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/rl_paychoose_4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dd_dimen_44px"
+            android:layout_marginRight="@dimen/dd_dimen_44px"
+            android:layout_marginTop="@dimen/dd_dimen_29px" >
+
+            <ImageView
+                android:id="@+id/iv_3"
+                android:layout_width="@dimen/dd_dimen_84px"
+                android:layout_height="@dimen/dd_dimen_84px"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_zhaoshang" />
+
+            <TextView
+                android:id="@+id/iv_re_title_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="@dimen/dd_dimen_20px"
+                android:layout_toRightOf="@+id/iv_3"
+                android:gravity="center_vertical"
+                android:text="招商银行"
+                android:textColor="@color/common_text"
+                android:textSize="@dimen/dd_dimen_30px" />
+
+            <TextView
+                android:id="@+id/iv_re_title_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/iv_re_title_3"
+                android:layout_below="@+id/iv_re_title_3"
+                android:layout_marginTop="@dimen/dd_dimen_20px"
+                android:gravity="center_vertical"
+                android:text="宏智君诚(北京)科技有限公司"
+                android:textColor="@color/common_text"
+                android:textSize="@dimen/dd_dimen_22px" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/iv_re_title_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/dd_dimen_20px"
+            android:layout_marginRight="@dimen/dd_dimen_44px"
+            android:gravity="center_vertical"
+            android:text="1109 1764 5210 401"
+            android:textColor="@color/common_text"
+            android:textSize="@dimen/dd_dimen_36px" />
+
+        <TextView
+            android:id="@+id/iv_re_title_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/iv_re_title_5"
+            android:layout_alignRight="@+id/iv_re_title_5"
+            android:layout_marginBottom="@dimen/dd_dimen_20px"
+            android:gravity="center_vertical"
+            android:text="招商银行北三环支行"
+            android:textColor="@color/common_text"
+            android:textSize="@dimen/dd_dimen_24px" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ll"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:visibility="gone" >
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/btn_shanchu"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dd_dimen_77px"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="@dimen/dd_dimen_20px"
+        android:layout_marginLeft="@dimen/dd_dimen_20px"
+        android:layout_marginRight="@dimen/dd_dimen_20px"
+        android:background="@drawable/shape_home_item_tv_sign_bg"
+        android:gravity="center"
+        android:text="确定使用转账付款"
+        android:textColor="@color/common_white"
+        android:textSize="@dimen/dd_dimen_30px" />
+
+    <TextView
+        android:id="@+id/tv_paycash_title12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_shanchu"
+        android:layout_marginBottom="@dimen/dd_dimen_24px"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="未按约定时间付款导致平台垫付帮客工资的，用工方需缴纳服务费（每月按订单金额的5%收取）"
+        android:textColor="@color/common_666666"
+        android:textSize="@dimen/dd_dimen_24px" />
+
+</RelativeLayout>

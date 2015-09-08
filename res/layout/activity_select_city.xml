@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <include
+        android:id="@+id/relative_head"
+        layout="@layout/stub_title" />
+
+    <LinearLayout
+        android:id="@+id/ll_one"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relative_head"
+        android:background="@color/common_grey"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingRight="@dimen/dd_dimen_60px" >
+
+        <TextView
+            android:id="@+id/catalog"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:background="@color/common_grey"
+            android:paddingBottom="@dimen/dd_dimen_10px"
+            android:paddingLeft="@dimen/dd_dimen_30px"
+            android:paddingTop="@dimen/dd_dimen_10px"
+            android:text="当前定位城市"
+            android:textColor="#000000"
+            android:textSize="@dimen/dd_dimen_25px" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dd_dimen_120px"
+            android:background="@color/common_white"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_select_dangqiancity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dd_dimen_20px"
+                android:background="@drawable/shape_city_name"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/dd_dimen_10px"
+                android:paddingLeft="@dimen/dd_dimen_20px"
+                android:paddingRight="@dimen/dd_dimen_20px"
+                android:paddingTop="@dimen/dd_dimen_10px"
+                android:text="北京"
+                android:textColor="@color/common_text"
+                android:textSize="@dimen/dd_dimen_36px" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/ll_one" >
+
+        <ListView
+            android:id="@+id/country_lvcountry"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:background="@color/common_grey"
+            android:divider="@null"
+            android:paddingRight="@dimen/dd_dimen_60px"
+            android:scrollbars="none" />
+
+        <TextView
+            android:id="@+id/dialog"
+            android:layout_width="80.0dip"
+            android:layout_height="80.0dip"
+            android:layout_gravity="center"
+            android:background="#aaaaaa"
+            android:gravity="center"
+            android:textColor="#2b7efe"
+            android:textSize="30.0dip"
+            android:visibility="invisible" />
+    </FrameLayout>
+
+    <com.cgzz.job.b.view.SideBar
+        android:id="@+id/sidrbar"
+        android:layout_width="@dimen/dd_dimen_60px"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="60dp"
+        android:layout_marginTop="104dp" />
+
+</RelativeLayout>

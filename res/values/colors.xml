@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="sc_transparent">#00ffffff</color>
+    <color name="devide_line">#DCDCDC</color>
+    <!-- 通用-白色 -->
+    <color name="common_white">#FFFFFF</color>
+    <!-- 通用-背景灰色 -->
+    <color name="common_grey">#EEEEEE</color>
+    <!-- 通用-红色 -->
+    <color name="common_red">#CC0000</color>
+
+    <!-- 通用-文字颜色（黑色） -->
+    <color name="common_text">#454545</color>
+    <!-- 通用-文字颜色（黑色） -->
+    <color name="common_message">#999999</color>
+
+    <!-- 通用-（黄色） -->
+    <color name="common_yellow">#FFBD00</color>
+    <!-- 通用- （黑色 ）    <color name="common_black">#00000000</color> -->
+    <color name="common_0d0c1e">#0d0c1e</color>
+    <color name="common_00a80c">#00a80c</color>
+    <color name="light_black">#333333</color>
+    <color name="common_CCCCCC">#CCCCCC</color>
+    <color name="common_222231">#222231</color>
+    <color name="common_e4e4e4">#e4e4e4</color>
+    <color name="common_QBA7FQ">#0BA7F0</color>
+    <color name="common_f37491">#f37491</color>
+    <color name="common_FF971E">#FF971E</color>
+    <color name="common_666666">#666666</color>
+    <color name="common_f6eee5">#f6eee5</color>
+    <color name="common_3669D3">#3669D3</color>
+    <color name="common_31c531">#31c531</color>
+    <color name="common_ec5050">#ec5050</color>
+    <color name="common_aedd43">#aedd43</color>
+
+</resources>
