@@ -12,7 +12,7 @@
     <RelativeLayout
         android:id="@+id/relativeLayout1"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="wrap_content"     android:background="@color/common_white" 
         android:layout_below="@id/title" >
 
         <RelativeLayout
@@ -20,14 +20,14 @@
             android:layout_width="fill_parent"
             android:layout_height="@dimen/dd_dimen_130px"
             android:layout_marginTop="@dimen/dd_dimen_20px"
-            android:background="@color/common_white" >
+       >
 
             <TextView
                 android:id="@+id/iv_seting_newsremind"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="@dimen/dd_dimen_32px"
+                android:layout_marginLeft="@dimen/dd_dimen_40px"
                 android:gravity="center_vertical"
                 android:text="我要发布长期订单"
                 android:textColor="@color/common_text"
@@ -44,7 +44,6 @@
                 android:button="@null"
                 android:gravity="center_vertical" />
         </RelativeLayout>
-
         <TextView
             android:id="@+id/iv_seting_newsremind2"
             android:layout_width="fill_parent"
@@ -53,11 +52,13 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/dd_dimen_40px"
             android:layout_marginRight="@dimen/dd_dimen_40px"
-            android:layout_marginTop="@dimen/dd_dimen_20px"
+            android:layout_marginTop="@dimen/dd_dimen_5px"
+                 android:paddingBottom="@dimen/dd_dimen_30px"
             android:gravity="center_vertical"
             android:text="长期订单意味着可以在固定时段内（最长7天）使用稳定的帮客上门从事客房清洁服务"
             android:textColor="@color/common_message"
             android:textSize="@dimen/dd_dimen_24px" />
+
     </RelativeLayout>
 
     <com.cgzz.job.b.view.ReboundScrollView

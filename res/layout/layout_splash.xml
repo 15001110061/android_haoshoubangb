@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/textView1"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="@dimen/dd_dimen_20px"
+            android:layout_marginBottom="@dimen/dd_dimen_30px"
             android:singleLine="true"
             android:text="您的酒店清洁专家"
             android:textColor="@color/common_text"
