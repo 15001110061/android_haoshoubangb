@@ -145,27 +145,28 @@ public class CityPicker extends LinearLayout {
 		
 		
 		 java.text.SimpleDateFormat df2 = new
-		 java.text.SimpleDateFormat("MMÔÂddÈÕ");
+		 java.text.SimpleDateFormat("MMÔÂdd");
 		 java.util.Calendar calendar2 = java.util.Calendar.getInstance();
 		
 		 String ymd="",ymd2="";
-		 for(int i=3;i<7;i++){
-			 
+		 for(int i=1;i<7;i++){
+			 System.out.println("wjm=aaaaa=="+i);
 			 SortModel2 s6 = new SortModel2();
-		 calendar.roll(java.util.Calendar.DAY_OF_YEAR, i);
+		 calendar.roll(java.util.Calendar.DAY_OF_YEAR, 1);
 		 ymd=df.format(calendar.getTime());
 		 
 		 
-		 
-		 calendar2.roll(java.util.Calendar.DAY_OF_YEAR, i);
+		 calendar2.roll(java.util.Calendar.DAY_OF_YEAR, 1);
 		 ymd2=df2.format(calendar2.getTime());
 		 
-		 
-		 
-		 getWeek(ymd);
-		 s6.setName(ymd2+ getWeek(ymd));
-		 s6.setId(ymd);
-			mPhotolist.add(s6);
+		 System.out.println("wjm=bbbbbb=="+ymd2);
+		 if(i>2){
+			 getWeek(ymd);
+			 s6.setName(getWeek(ymd)+ymd2 );
+			 s6.setId(ymd);
+				mPhotolist.add(s6);
+		 }
+	
 		 
 			
 			
