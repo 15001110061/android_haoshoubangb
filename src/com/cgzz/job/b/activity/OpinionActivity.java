@@ -180,7 +180,7 @@ public class OpinionActivity extends BaseActivity implements OnClickListener {
 			@Override
 			public void onClick(View v) {
 				popTheirProfile.dismiss();
-				Utils.call(getResources().getString(R.string.call_customer),
+				Utils.calls(getResources().getString(R.string.call_customer),
 						OpinionActivity.this);
 
 			}

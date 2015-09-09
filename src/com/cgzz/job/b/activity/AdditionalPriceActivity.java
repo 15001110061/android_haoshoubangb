@@ -144,6 +144,11 @@ public class AdditionalPriceActivity extends BaseActivity implements OnClickList
 		if ("0".equals(suite_count)) {
 			rl_addprice_3.setVisibility(View.GONE);
 		}
+		
+		
+		int s = Integer.parseInt(workercount)
+				* Integer.parseInt(tv_addprice_danjia1.getText().toString());
+		tv_help_biaojianjiage8.setText(s+"");
 
 	}
 

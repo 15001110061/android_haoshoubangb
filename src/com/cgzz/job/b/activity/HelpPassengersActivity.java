@@ -21,11 +21,13 @@ import com.cgzz.job.b.utils.ToastUtil;
 import com.cgzz.job.b.utils.Utils;
 import com.cgzz.job.b.view.CityPicker;
 import com.cgzz.job.b.view.CustomListView;
+import com.cgzz.job.b.view.TitleBarView;
 import com.cgzz.job.b.wheel.GoOffWheelView;
 import com.cgzz.job.b.wheelview.NumericWheelAdapter;
 import com.cgzz.job.b.wheelview.OnWheelScrollListener;
 import com.cgzz.job.b.wheelview.WheelView;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -35,7 +37,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.text.format.Time;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -59,7 +60,7 @@ import android.widget.TextView;
 /***
  * @author wjm 主页：发布订单
  */
-public class HelpPassengersActivity extends BaseActivity implements OnClickListener, OnCheckedChangeListener {
+public class HelpPassengersActivity extends BaseActivity implements OnClickListener {
 	private int type = 0, typetime = 0;
 	int min_standard_price = -1;
 	int min_suite_price = -1;
@@ -160,10 +161,10 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 	EditText et_help_biaojian, et_help_taofang;
 	private CityPicker cityPicker;
 	RelativeLayout ll_time;
-	TextView timeok, timecancel;
-	CheckBox cb_seting_shoushi;
+	TextView timeok, timecancel,iv_seting_newsremind2;
+//	CheckBox cb_seting_shoushi;
 	ImageButton dis;
-
+	TitleBarView mTitleBarView;
 	private void findView() {
 		//
 		ll_time = (RelativeLayout) findViewById(R.id.ll_time);
@@ -208,7 +209,7 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 		tv_help_ba = (TextView) findViewById(R.id.tv_help_ba);
 		tv_help_liu = (TextView) findViewById(R.id.tv_help_liu);
 		//
-		cb_seting_shoushi = (CheckBox) findViewById(R.id.cb_seting_shoushi);
+//		cb_seting_shoushi = (CheckBox) findViewById(R.id.cb_seting_shoushi);
 		//
 		rl_help_time1 = (RelativeLayout) findViewById(R.id.rl_help_time1);
 		rl_help_time2 = (RelativeLayout) findViewById(R.id.rl_help_time2);
@@ -221,6 +222,49 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 		rl_help_time2.setVisibility(View.GONE);
 		rl_help_time3.setVisibility(View.GONE);
 		rl_help_time4.setVisibility(View.VISIBLE);
+		//
+		
+		mTitleBarView = (TitleBarView) findViewById(R.id.title_bar);
+		iv_seting_newsremind2= (TextView) findViewById(R.id.iv_seting_newsremind2);
+		mTitleBarView.setCommonTitle(View.GONE, View.GONE, View.VISIBLE,
+				View.VISIBLE);
+
+		mTitleBarView.getTitleLeft().setOnClickListener(new OnClickListener() {
+			@SuppressLint("NewApi")
+			@Override
+			public void onClick(View v) {
+				if (mTitleBarView.getTitleLeft().isEnabled()) {
+					mTitleBarView.getTitleLeft().setEnabled(false);
+					mTitleBarView.getTitleRight().setEnabled(true);
+					iv_seting_newsremind2.setVisibility(View.GONE);
+					
+					rl_help_time1.setVisibility(View.GONE);
+					rl_help_time2.setVisibility(View.GONE);
+					rl_help_time3.setVisibility(View.GONE);
+					rl_help_time4.setVisibility(View.VISIBLE);
+					
+				}
+			}
+		});
+
+		mTitleBarView.getTitleRight().setOnClickListener(new OnClickListener() {
+			@SuppressLint("NewApi")
+			@Override
+			public void onClick(View v) {
+				if (mTitleBarView.getTitleRight().isEnabled()) {
+					mTitleBarView.getTitleLeft().setEnabled(true);
+					mTitleBarView.getTitleRight().setEnabled(false);
+					rl_help_time1.setVisibility(View.VISIBLE);
+					rl_help_time2.setVisibility(View.VISIBLE);
+					rl_help_time3.setVisibility(View.VISIBLE);
+					rl_help_time4.setVisibility(View.GONE);
+					iv_seting_newsremind2.setVisibility(View.VISIBLE);
+				}
+
+			}
+		});
+		mTitleBarView.getTitleLeft().performClick();
+		iv_seting_newsremind2.setVisibility(View.GONE);
 	}
 
 	TextView tv_help_time1, tv_help_time2, tv_help_time3;
@@ -246,7 +290,7 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 
 		et_help_biaojian.addTextChangedListener(textWatcher);
 		et_help_taofang.addTextChangedListener(textWatcher);
-		cb_seting_shoushi.setOnCheckedChangeListener(this);
+//		cb_seting_shoushi.setOnCheckedChangeListener(this);
 
 		tv_help_time1.setOnClickListener(this);
 		tv_help_time2.setOnClickListener(this);
@@ -380,7 +424,18 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 		case R.id.tv_help_zhaobangke2:
 			String time = tv_help_time.getText().toString();
 			String time3 = tv_help_time3.getText().toString();
-			if (!cb_seting_shoushi.isChecked()) {
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			if (!mTitleBarView.getTitleLeft().isEnabled()) {
 				if (Utils.isEmpty(time)) {
 					ToastUtil.makeShortText(this, "请选择时间");
 					return;
@@ -460,7 +515,7 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 
 			if ("1".equals(application.getReviewHotel())) {
 
-				if (cb_seting_shoushi.isChecked()) {
+				if (mTitleBarView.getTitleLeft().isEnabled()) {
 					int i = CalculationTime(start, end);
 					if (i < 7 && i > 0) {
 						createOrderbB(UrlConfig.createOrderbB, application.getUserId(), application.getToken(), tv_help_time1.getText().toString()+" "+time3,
@@ -1095,7 +1150,7 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 			map.put("length", length);
 		}
 		
-		if (cb_seting_shoushi.isChecked()) {
+		if (mTitleBarView.getTitleLeft().isEnabled()) {
 			
 			map.put("begindate", begindate);
 			map.put("enddate", enddate);
@@ -1118,26 +1173,26 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 				loadedtype);
 	}
 
-	@Override
-	public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
-		if (arg0 == cb_seting_shoushi) {
-			if (arg1) {
-
-				rl_help_time1.setVisibility(View.VISIBLE);
-				rl_help_time2.setVisibility(View.VISIBLE);
-				rl_help_time3.setVisibility(View.VISIBLE);
-				rl_help_time4.setVisibility(View.GONE);
-
-			} else {
-
-				rl_help_time1.setVisibility(View.GONE);
-				rl_help_time2.setVisibility(View.GONE);
-				rl_help_time3.setVisibility(View.GONE);
-				rl_help_time4.setVisibility(View.VISIBLE);
-
-			}
-
-		}
-
-	}
+//	@Override
+//	public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
+//		if (arg0 == cb_seting_shoushi) {
+//			if (arg1) {
+//
+//				rl_help_time1.setVisibility(View.VISIBLE);
+//				rl_help_time2.setVisibility(View.VISIBLE);
+//				rl_help_time3.setVisibility(View.VISIBLE);
+//				rl_help_time4.setVisibility(View.GONE);
+//
+//			} else {
+//
+//				rl_help_time1.setVisibility(View.GONE);
+//				rl_help_time2.setVisibility(View.GONE);
+//				rl_help_time3.setVisibility(View.GONE);
+//				rl_help_time4.setVisibility(View.VISIBLE);
+//
+//			}
+//
+//		}
+//
+//	}
 }

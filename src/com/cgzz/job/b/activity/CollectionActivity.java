@@ -5,25 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import android.app.Activity;
-import android.graphics.Rect;
-import android.graphics.drawable.BitmapDrawable;
-import android.os.Bundle;
-import android.support.v4.view.ViewPager;
-import android.view.Display;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.WindowManager;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup.LayoutParams;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.PopupWindow;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-
 import com.cgzz.job.b.BaseActivity;
 import com.cgzz.job.b.R;
 import com.cgzz.job.b.adapter.CollectionAdapter;
@@ -40,6 +21,25 @@ import com.cgzz.job.b.utils.Utils;
 import com.cgzz.job.b.view.CustomListView;
 import com.cgzz.job.b.view.CustomListView.OnLoadMoreListener;
 import com.cgzz.job.b.view.CustomListView.OnRefreshListener;
+
+import android.app.Activity;
+import android.graphics.Rect;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.Bundle;
+import android.support.v4.view.ViewPager;
+import android.view.Display;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup.LayoutParams;
+import android.view.WindowManager;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.PopupWindow;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 /***
  * @author wjm Œ“µƒ ’≤ÿ
@@ -342,7 +342,8 @@ public class CollectionActivity extends BaseActivity implements
 			@Override
 			public void onClick(View v) {
 				popTheirProfile.dismiss();
-				Utils.call(tel, CollectionActivity.this);
+				Utils.calls(tel,
+						CollectionActivity.this);
 
 			}
 		});

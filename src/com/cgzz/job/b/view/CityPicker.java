@@ -94,25 +94,25 @@ public class CityPicker extends LinearLayout {
 			e.printStackTrace();
 		}
 		if (c.get(Calendar.DAY_OF_WEEK) == 1) {
-			Week += "(天)";
+			Week += "周日";
 		}
 		if (c.get(Calendar.DAY_OF_WEEK) == 2) {
-			Week += "(一)";
+			Week += "周一";
 		}
 		if (c.get(Calendar.DAY_OF_WEEK) == 3) {
-			Week += "(二)";
+			Week += "周二";
 		}
 		if (c.get(Calendar.DAY_OF_WEEK) == 4) {
-			Week += "(三)";
+			Week += "周三";
 		}
 		if (c.get(Calendar.DAY_OF_WEEK) == 5) {
-			Week += "(四)";
+			Week += "周四";
 		}
 		if (c.get(Calendar.DAY_OF_WEEK) == 6) {
-			Week += "(五)";
+			Week += "周五";
 		}
 		if (c.get(Calendar.DAY_OF_WEEK) == 7) {
-			Week += "(六)";
+			Week += "周六";
 		}
 
 		return Week;

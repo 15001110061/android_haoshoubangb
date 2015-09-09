@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+<color name="common_title">#F9F9F9</color>
     <color name="sc_transparent">#00ffffff</color>
     <color name="devide_line">#DCDCDC</color>
     <!-- 通用-白色 -->
@@ -33,5 +33,5 @@
     <color name="common_31c531">#31c531</color>
     <color name="common_ec5050">#ec5050</color>
     <color name="common_aedd43">#aedd43</color>
-
+<color name="common_00000000">#00000000</color> 
 </resources>
