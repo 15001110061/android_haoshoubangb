@@ -36,8 +36,7 @@ public class WorkcardAdapter extends BaseAdapter {
 		this.context = contexts;
 		this.inflater = LayoutInflater.from(context);
 		data = new ArrayList<Map<String, String>>();
-		mImageLoader = new ImageLoader(
-				GlobalVariables.getRequestQueue(context), new BitmapCache());
+		mImageLoader = new ImageLoader(GlobalVariables.getRequestQueue(context), new BitmapCache());
 	}
 
 	public void refreshMYData(List<Map<String, String>> dataGroup) {
@@ -71,15 +70,11 @@ public class WorkcardAdapter extends BaseAdapter {
 	private View getInviteView(final int position, View convertView) {
 		ViewHolder holder;
 		if (convertView == null) {
-			convertView = inflater.inflate(R.layout.fragment_workcard_item,
-					null);
+			convertView = inflater.inflate(R.layout.fragment_workcard_item, null);
 			holder = new ViewHolder();
-			holder.tv_workcard_2 = (TextView) convertView
-					.findViewById(R.id.tv_workcard_2);
-			holder.tv_workcard_1 = (TextView) convertView
-					.findViewById(R.id.tv_workcard_1);
-			holder.tv_workcard_picture = (ImageView) convertView
-					.findViewById(R.id.tv_workcard_picture);
+			holder.tv_workcard_2 = (TextView) convertView.findViewById(R.id.tv_workcard_2);
+			holder.tv_workcard_1 = (TextView) convertView.findViewById(R.id.tv_workcard_1);
+			holder.tv_workcard_picture = (ImageView) convertView.findViewById(R.id.tv_workcard_picture);
 
 			convertView.setTag(holder);
 		} else {
@@ -92,10 +87,14 @@ public class WorkcardAdapter extends BaseAdapter {
 		holder.tv_workcard_2.setText(map.get("num"));
 
 		String image = map.get("front_photos");
-		ImageListener listener = ImageLoader.getImageListener(
-				holder.tv_workcard_picture, R.drawable.icon_nor_user,
+		ImageListener listener = ImageLoader.getImageListener(holder.tv_workcard_picture, R.drawable.icon_nor_user,
 				R.drawable.icon_nor_user);
-		ImageContainer imageContainer = mImageLoader.get(image, listener);
+		try {
+			mImageLoader.get(image, listener);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
 		return convertView;
 	}
 
@@ -134,8 +133,7 @@ public class WorkcardAdapter extends BaseAdapter {
 		return onTextClickListener;
 	}
 
-	public void setOnTextClickListener(OnTextClickListener onTextClickListener,
-			int logoUserInfos) {
+	public void setOnTextClickListener(OnTextClickListener onTextClickListener, int logoUserInfos) {
 		this.onTextClickListener = onTextClickListener;
 		this.p2 = logoUserInfos;
 	}
@@ -172,8 +170,7 @@ public class WorkcardAdapter extends BaseAdapter {
 		return onTelClickListener;
 	}
 
-	public void setOnTelClickListener(OnTelClickListener onTelClickListener,
-			int logoUserInfos) {
+	public void setOnTelClickListener(OnTelClickListener onTelClickListener, int logoUserInfos) {
 		this.onTelClickListener = onTelClickListener;
 		this.p1 = logoUserInfos;
 	}
@@ -210,8 +207,7 @@ public class WorkcardAdapter extends BaseAdapter {
 		return onCancelOrderClickListener;
 	}
 
-	public void setOnCancelOrderClickListener(
-			OnCancelOrderClickListener onCancelOrderClickListener,
+	public void setOnCancelOrderClickListener(OnCancelOrderClickListener onCancelOrderClickListener,
 			int logoUserInfos) {
 		this.onCancelOrderClickListener = onCancelOrderClickListener;
 		this.p = logoUserInfos;
@@ -249,8 +245,7 @@ public class WorkcardAdapter extends BaseAdapter {
 		return onRouteClickListener;
 	}
 
-	public void setOnRouteClickListener(
-			OnRouteClickListener onRouteClickListener, int logoUserInfos) {
+	public void setOnRouteClickListener(OnRouteClickListener onRouteClickListener, int logoUserInfos) {
 		this.onRouteClickListener = onRouteClickListener;
 		this.p8 = logoUserInfos;
 	}
@@ -287,8 +282,7 @@ public class WorkcardAdapter extends BaseAdapter {
 		return onRefuseClickListener;
 	}
 
-	public void setonRefuseClickListener(
-			OnRefuseClickListener onRefuseClickListener, int logoUserInfos) {
+	public void setonRefuseClickListener(OnRefuseClickListener onRefuseClickListener, int logoUserInfos) {
 		this.onRefuseClickListener = onRefuseClickListener;
 		this.p4 = logoUserInfos;
 	}

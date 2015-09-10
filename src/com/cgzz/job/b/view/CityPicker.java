@@ -150,7 +150,6 @@ public class CityPicker extends LinearLayout {
 		
 		 String ymd="",ymd2="";
 		 for(int i=1;i<7;i++){
-			 System.out.println("wjm=aaaaa=="+i);
 			 SortModel2 s6 = new SortModel2();
 		 calendar.roll(java.util.Calendar.DAY_OF_YEAR, 1);
 		 ymd=df.format(calendar.getTime());
@@ -159,7 +158,6 @@ public class CityPicker extends LinearLayout {
 		 calendar2.roll(java.util.Calendar.DAY_OF_YEAR, 1);
 		 ymd2=df2.format(calendar2.getTime());
 		 
-		 System.out.println("wjm=bbbbbb=="+ymd2);
 		 if(i>2){
 			 getWeek(ymd);
 			 s6.setName(getWeek(ymd)+ymd2 );

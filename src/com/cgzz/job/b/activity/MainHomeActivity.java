@@ -9,20 +9,24 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 import android.content.Intent;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
@@ -53,10 +57,11 @@ public class MainHomeActivity extends BaseActivity
 	private ScheduledExecutorService scheduledExecutorService;
 	private boolean mark = true;
 	private LinearLayout llright, llLeft, rl_home_one, rl_home_two;
-	private TextView tv_title_left, tv_home_service;
+	private TextView tv_title_left, tv_home_service,tv_title;
 	GridHomeView gridview;
 	ViewPager viewpagerHeader;
 	String count = "0";
+	private int mark2 =0;
 	private ObserverCallBack callbackData = new ObserverCallBack() {
 
 		@Override
@@ -165,6 +170,10 @@ public class MainHomeActivity extends BaseActivity
 	}
 
 	private void initView() {
+
+		tv_title = (TextView) findViewById(R.id.tv_title);
+		
+		
 		rl_home_two = (LinearLayout) findViewById(R.id.rl_home_two);
 		rl_home_one = (LinearLayout) findViewById(R.id.rl_home_one);
 		llright = (LinearLayout) findViewById(R.id.ll_title_right);
@@ -186,6 +195,11 @@ public class MainHomeActivity extends BaseActivity
 		// 图片轮询
 		viewpagerHeader = (ViewPager) findViewById(R.id.vp);
 		addScroll = (LinearLayout) findViewById(R.id.ll_scroll);
+		
+		if (!application.isAnnouncement){
+			tv_title.setOnClickListener(this);
+			tv_title.setText("内部使用版本");
+		}
 	}
 
 	public void setAdapter() {
@@ -210,6 +224,15 @@ public class MainHomeActivity extends BaseActivity
 			intent = new Intent(MainHomeActivity.this, LoginActivity.class);
 			startActivity(intent);
 			finish();
+			break;
+			
+		case R.id.tv_title://
+			mark2++;
+			if(mark2==4){
+				popTheirProfile();
+				mark2=0;
+			}
+		
 			break;
 		default:
 			break;
@@ -511,14 +534,24 @@ public class MainHomeActivity extends BaseActivity
 		ImageListener listenerAfter = ImageLoader.getImageListener(mViews.get(0), R.drawable.icon_loadfailed_bg,
 				R.drawable.icon_loadfailed_bg);
 		if (mapAfter.get("dict_value") != null)
-			mImageLoader.get(mapAfter.get("dict_value"), listenerAfter);
+			try {
+				mImageLoader.get(mapAfter.get("dict_value"), listenerAfter);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		
 
 		Map<String, String> mapFirst = list.get(0);// 多张图给最前面的图设置背景
 
 		ImageListener listenerFirst = ImageLoader.getImageListener(mViews.get(length - 1),
 				R.drawable.icon_loadfailed_bg, R.drawable.icon_loadfailed_bg);
 		if (mapFirst.get("dict_value") != null)
-			mImageLoader.get(mapFirst.get("dict_value"), listenerFirst);
+			try {
+				mImageLoader.get(mapFirst.get("dict_value"), listenerFirst);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			
 	}
 
 	public void headViewPagerOnItemOnClick(String title, String url) {
@@ -563,5 +596,69 @@ public class MainHomeActivity extends BaseActivity
 		AnsynHttpRequest.requestGetOrPost(AnsynHttpRequest.POST, MainHomeActivity.this, url, map, callbackData,
 				GlobalVariables.getRequestQueue(MainHomeActivity.this), HttpStaticApi.bangkeCountB_Http, null,
 				loadedtype);
+	}
+	
+	
+	
+	
+	
+	private PopupWindow popTheirProfile;
+
+	public void popTheirProfile() {
+		View popView = View.inflate(this, R.layout.pop_their_profile, null);
+
+		ImageButton dis = (ImageButton) popView.findViewById(R.id.ib_dis);
+		popTheirProfile = new PopupWindow(popView);
+		popTheirProfile.setBackgroundDrawable(new BitmapDrawable());// 没有此句点击外部不会消失
+		popTheirProfile.setOutsideTouchable(true);
+		popTheirProfile.setFocusable(true);
+		popTheirProfile.setAnimationStyle(R.style.MyPopupAnimation);
+		popTheirProfile.setWidth(LayoutParams.FILL_PARENT);
+		popTheirProfile.setHeight(LayoutParams.WRAP_CONTENT);
+		popTheirProfile.showAtLocation(findViewById(R.id.rl_signet_two), Gravity.BOTTOM, 0, 0);
+
+		TextView up = (TextView) popView.findViewById(R.id.tv_pop_up);
+		TextView title = (TextView) popView.findViewById(R.id.tv_title);
+		TextView under = (TextView) popView.findViewById(R.id.tv_pop_under);
+		if (application.isEnvironment()) {
+			title.setText("当前是正式环境");
+		} else {
+			title.setText("当前是测试环境");
+		}
+
+		up.setText("切换到测试环境");
+		under.setText("切换到正式环境");
+
+		up.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				popTheirProfile.dismiss();
+				application.setEnvironment(false);
+				application.setLogon(false);
+				Utils.closeActivity();
+				android.os.Process.killProcess(android.os.Process.myPid()); // 获取PID
+				System.exit(0); // 常规java、c#的标准退出法，返回值为0代表正常退出
+
+			}
+		});
+		under.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				popTheirProfile.dismiss();
+				application.setEnvironment(true);
+				application.setLogon(false);
+				Utils.closeActivity();
+				android.os.Process.killProcess(android.os.Process.myPid()); // 获取PID
+				System.exit(0); // 常规java、c#的标准退出法，返回值为0代表正常退出
+			}
+		});
+		dis.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				popTheirProfile.dismiss();
+			}
+		});
+
 	}
 }

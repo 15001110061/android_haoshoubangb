@@ -114,7 +114,12 @@ public class CollectionAdapter extends BaseAdapter {
 			ImageListener listener = ImageLoader.getImageListener(
 					holder.iv_collection_picture, R.drawable.image_moren_pop,
 					R.drawable.image_moren_pop);
-			ImageContainer imageContainer = mImageLoader.get(image, listener);
+			try {
+				 mImageLoader.get(image, listener);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+
 		}
 
 		if ("0".equals(map.get("isxuanzhong"))) {

@@ -128,7 +128,12 @@ public class OrdersConfirmedAdapter extends BaseAdapter {
 		String image = map.get("portrait");
 		ImageListener listener = ImageLoader.getImageListener(holder.iv_oc_picture, R.drawable.image_moren,
 				R.drawable.image_moren);
-		ImageContainer imageContainer = mImageLoader.get(image, listener);
+		try {
+			 mImageLoader.get(image, listener);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
 		//
 		holder.ll_order_dashang.setOnClickListener(new TelOnClickListener(position));
 		holder.tv_oc_shu3.setOnClickListener(new TelOnClickListener(position));

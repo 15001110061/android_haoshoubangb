@@ -264,7 +264,12 @@ public class MainMyFragment extends BaseActivity implements OnClickListener {
 			// Í·Ïñ
 			ImageListener listener = ImageLoader.getImageListener(iv_my_pic, R.drawable.icon_touxiangmoren,
 					R.drawable.icon_touxiangmoren);
-			mImageLoader.get(application.getFaceUrl(), listener);
+			try {
+				mImageLoader.get(application.getFaceUrl(), listener);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		
 			tv_my_name.setText(application.getRealname());
 
 			if ("1".equals(application.getReviewHotel())) {

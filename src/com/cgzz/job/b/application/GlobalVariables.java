@@ -17,6 +17,11 @@ import com.cgzz.job.b.BaseActivityCloseListener;
  * 全局变量
  */
 public class GlobalVariables extends LitePalApplication {
+	
+	
+	public boolean isAnnouncement  = false;//
+	
+	
 	public SparseArray<SparseArray<BaseActivityCloseListener>> closeMap;
 	public static RequestQueue mQueue;
 	private SharedPreferences sp;
@@ -66,7 +71,51 @@ public class GlobalVariables extends LitePalApplication {
 	private String hotelid = "";// 是否绑定企业
 	private String reviewHotel = "";// 是否审核 1审核中 ，2审核失败，3审核成功，4没有审核过
 	private String priority = "0";// 是否能修改酒店信息 1：能 0：否
+	private boolean isEnvironment = false;
+	
 
+	public  static  String ROOT = "";
+	
+	
+	@Override
+	public void onCreate() {
+		super.onCreate();
+		// 读取配置文件
+		sp = getSharedPreferences("ownconfigure", Activity.MODE_PRIVATE);
+		editor = sp.edit();
+		getAccess();
+
+		// Jpush
+		if (isLogon) {
+			
+			JPushInterface.setDebugMode(true); // 设置开启日志,发布时请关闭日志
+			JPushInterface.init(this); // 初始化 JPush
+			JPushInterface.resumePush(getApplicationContext());
+		}
+		if(isAnnouncement){
+			ROOT = "http://service.haoshoubang.com/";
+		}else{
+			if(isEnvironment){
+			ROOT = "http://service.haoshoubang.com/";
+			}else{
+			ROOT = "http://test.haoshoubang.com/";
+			}
+		}
+	
+		//
+		closeMap = new SparseArray<SparseArray<BaseActivityCloseListener>>();
+		//
+	}
+	
+	public boolean isEnvironment() {
+		return isEnvironment;
+	}
+
+	public void setEnvironment(boolean isEnvironment) {
+		this.isEnvironment = isEnvironment;
+		editor.putBoolean("isEnvironment", isEnvironment);
+		editor.commit();
+	}
 	public String getLongitudeHotel() {
 		return longitudeHotel;
 	}
@@ -411,26 +460,7 @@ public class GlobalVariables extends LitePalApplication {
 		editor.commit();
 	}
 
-	@Override
-	public void onCreate() {
-		super.onCreate();
-		// 读取配置文件
-		sp = getSharedPreferences("ownconfigure", Activity.MODE_PRIVATE);
-		editor = sp.edit();
-		getAccess();
 
-		// Jpush
-		if (isLogon) {
-			
-			JPushInterface.setDebugMode(true); // 设置开启日志,发布时请关闭日志
-			JPushInterface.init(this); // 初始化 JPush
-			JPushInterface.resumePush(getApplicationContext());
-		}
-
-		//
-		closeMap = new SparseArray<SparseArray<BaseActivityCloseListener>>();
-		//
-	}
 
 	public static RequestQueue getRequestQueue(Context c) {
 		if (mQueue == null) {
@@ -542,6 +572,7 @@ public class GlobalVariables extends LitePalApplication {
 		balance = sp.getString("balance", "");
 		star = sp.getString("star", "1");
 		jifen = sp.getString("jifen", "0");
+		isEnvironment = sp.getBoolean("isEnvironment", false);
 
 	}
 

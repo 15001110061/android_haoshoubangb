@@ -177,7 +177,12 @@ public class TheirProfileActivity extends BaseActivity
 		// 头像
 		ImageListener listener = ImageLoader.getImageListener(iv_their_pic, R.drawable.icon_touxiangmoren,
 				R.drawable.icon_touxiangmoren);
-		mImageLoader.get(application.getFaceUrl(), listener);// 头像地址
+		try {
+			mImageLoader.get(application.getFaceUrl(), listener);// 头像地址
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	
 		iv_their_credit.setText(application.getJifen() + "积分");//
 		tv_their_tel.setText(application.getMobile());// 个人电话
 		et_their_email.setText(application.getEmail());// 企业邮箱
@@ -702,7 +707,7 @@ public class TheirProfileActivity extends BaseActivity
 		map.put("apptype", apptype);
 		map.put("userid", userid);
 		map.put("token", token);
-
+		if (!Utils.isEmpty(portrait)) 
 		map.put("portrait", portrait);
 		map.put("email", email);
 

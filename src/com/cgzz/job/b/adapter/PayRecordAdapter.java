@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.ImageLoader.ImageCache;
+import com.cgzz.job.b.R;
+import com.cgzz.job.b.application.GlobalVariables;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.support.v4.util.LruCache;
@@ -11,23 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.CompoundButton.OnCheckedChangeListener;
-
-import com.android.volley.toolbox.ImageLoader;
-import com.android.volley.toolbox.ImageLoader.ImageCache;
-import com.android.volley.toolbox.ImageLoader.ImageContainer;
-import com.android.volley.toolbox.ImageLoader.ImageListener;
-import com.cgzz.job.b.R;
-import com.cgzz.job.b.adapter.ReviewsItemAdapter.ViewHolder;
-import com.cgzz.job.b.adapter.WorkcardAdapter.OnTelClickListener;
-import com.cgzz.job.b.adapter.WorkcardAdapter.TelOnClickListener;
-import com.cgzz.job.b.application.GlobalVariables;
-import com.cgzz.job.b.utils.ToastUtil;
-import com.cgzz.job.b.utils.Utils;
 
 /***
  * 

@@ -1,5 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_signet_two"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@color/common_grey"
@@ -77,13 +78,13 @@
 
         <TextView
             android:id="@+id/tv_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/dd_dimen_26px"
             android:ellipsize="end"
-            android:gravity="left"
+            android:gravity="center"
             android:singleLine="true"
             android:text="好手帮"
             android:textColor="@color/common_white"

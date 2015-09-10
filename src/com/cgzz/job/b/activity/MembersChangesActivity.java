@@ -188,7 +188,12 @@ public class MembersChangesActivity extends BaseActivity implements OnClickListe
 			// Í·Ïñ
 			ImageListener listener = ImageLoader.getImageListener(iv_my_pic, R.drawable.image_moren_pop,
 					R.drawable.image_moren_pop);
-			mImageLoader.get(portrait, listener);
+			try {
+				mImageLoader.get(portrait, listener);	
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+
 		}
 		tv_my_name.setText(realname);
 		tv_my_jifen.setText(mobile);

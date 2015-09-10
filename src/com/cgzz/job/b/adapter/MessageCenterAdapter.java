@@ -110,7 +110,12 @@ public class MessageCenterAdapter extends BaseAdapter {
 			ImageListener listener = ImageLoader.getImageListener(
 					holder.iv_message_picture, R.drawable.icon_loadfailed_bgs,
 					R.drawable.icon_loadfailed_bgs);
-			ImageContainer imageContainer = mImageLoader.get(image, listener);
+			try {
+				 mImageLoader.get(image, listener);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			
 		} else {
 			holder.iv_message_picture.setVisibility(View.GONE);
 		}

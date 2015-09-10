@@ -121,18 +121,19 @@ public class SignedActivityOne extends BaseActivity implements OnClickListener, 
 		tv_signed_next.setOnClickListener(this);
 		et_signed_send_captchas_code.setOnClickListener(this);
 		if (!Utils.isEmpty(getLocalNumber())) {
-			et_signed_phones.setText(getLocalNumber()+"");
+			et_signed_phones.setText(getLocalNumber().replace("+86", "") + "");
 		}
 	}
+
 	/*
-     * 获取当前的手机号
-     */
-    public String getLocalNumber() {
-            TelephonyManager tManager = (TelephonyManager) this
-                            .getSystemService(TELEPHONY_SERVICE);
-            String number = tManager.getLine1Number();
-              return number;
-    }
+	 * 获取当前的手机号
+	 */
+	public String getLocalNumber() {
+		TelephonyManager tManager = (TelephonyManager) this.getSystemService(TELEPHONY_SERVICE);
+		String number = tManager.getLine1Number();
+		return number;
+	}
+
 	@Override
 	public void onClick(View v) {
 		Intent intent = null;

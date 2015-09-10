@@ -65,6 +65,8 @@ public class AnsynHttpRequest {
 			final ObserverCallBack callBack, RequestQueue mQueue, final int i,
 			final Object obj, final boolean loadedtype) {
 		url = Utf8URLencode(url);
+		
+		System.out.println("wjm=====url=="+url);
 		switch (sendType) {
 		case POST:
 			System.out.println("wjm===POST==map==" + map);

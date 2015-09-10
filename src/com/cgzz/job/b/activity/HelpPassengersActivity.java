@@ -638,7 +638,7 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 				String yue = "", ri = "";
 				yue = cityPicker.getCity_string1();
 				ri = cityPicker.getCity_string2();
-				System.out.println("wjm==长期开始===yue" + yue + "ri==" + ri);
+//				System.out.println("wjm==长期开始===yue" + yue + "ri==" + ri);
 				times.append(yue.replace("月", "") + "-");// 月
 				times.append(ri.replace("日", "") + " ");// 日
 				tv_help_time1.setText(times.toString() + "");
@@ -652,7 +652,7 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 				yue = cityPicker.getCity_string1();
 				ri = cityPicker.getCity_string2();
 
-				System.out.println("wjm==长期结束===yue" + yue + "ri==" + ri);
+//				System.out.println("wjm==长期结束===yue" + yue + "ri==" + ri);
 				int i = CalculationTime(start, yue.replace("月", "") + ri.replace("日", ""));
 				java.text.SimpleDateFormat df = new java.text.SimpleDateFormat("yyyy");
 				java.util.Calendar calendar = java.util.Calendar.getInstance();
@@ -743,7 +743,7 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 		cal1.setTime(date1);
 		cal2.setTime(date2);
 		double dayCount = (cal2.getTimeInMillis() - cal1.getTimeInMillis()) / (1000 * 3600 * 24);// 从间隔毫秒变成间隔天数
-		System.out.println("wjm====相差" + (int) dayCount + "天");
+//		System.out.println("wjm====相差" + (int) dayCount + "天");
 
 		return (int) dayCount;
 	}

@@ -347,6 +347,7 @@ public final class ImageTools {
 				
 			} finally {
 				try {
+					if (fileOutputStream != null)
 					fileOutputStream.close();
 				} catch (IOException e) {
 					e.printStackTrace();

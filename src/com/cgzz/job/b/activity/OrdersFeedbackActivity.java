@@ -129,7 +129,12 @@ public class OrdersFeedbackActivity extends BaseActivity implements
 		ImageListener listener = ImageLoader.getImageListener(
 				iv_ordersfeedback_picture, R.drawable.icon_nor_user,
 				R.drawable.icon_nor_user);
-		mImageLoader.get(bundle.getString("front_photos"), listener);
+		try {
+			mImageLoader.get(bundle.getString("front_photos"), listener);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	
 
 		tv_ordersfeedback_title.setText(bundle.getString("name"));
 

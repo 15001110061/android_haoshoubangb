@@ -110,7 +110,12 @@ public class SignedActivityThreeAdapter extends BaseAdapter {
 		ImageListener listener = ImageLoader.getImageListener(
 				holder.iv_collection_picture, R.drawable.image_moren,
 				R.drawable.image_moren);
-		ImageContainer imageContainer = mImageLoader.get(image, listener);
+		try {
+			mImageLoader.get(image, listener);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
 
 		if ("".equals(map.get("realname"))) {
 			holder.tv_current_yanshou2.setVisibility(View.VISIBLE);

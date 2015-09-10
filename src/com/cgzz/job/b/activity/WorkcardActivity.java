@@ -187,7 +187,12 @@ public class WorkcardActivity extends BaseActivity implements
 		ImageListener listener = ImageLoader.getImageListener(
 				iv_workcard_touxiang, R.drawable.icon_nor_user,
 				R.drawable.icon_nor_user);
+	try {
 		mImageLoader.get(application.getFaceUrl(), listener);
+	} catch (Exception e) {
+		// TODO: handle exception
+	}
+	
 		// name
 		tv_workcard_name.setText(application.getRealname());
 		// age

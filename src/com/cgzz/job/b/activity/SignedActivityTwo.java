@@ -76,7 +76,7 @@ public class SignedActivityTwo extends BaseActivity implements OnClickListener {
 	private static final int CROP_PICTURE = 3;
 	private PopupWindow popTheirProfile;
 	private boolean picture_typePop;
-	private String mobile, password, faceurl, cardurl;
+	private String mobile="", password="", faceurl="", cardurl="";
 	private ImageView iv_signed_photo_card, iv_signed_photo_face;
 
 	/**
@@ -223,15 +223,15 @@ public class SignedActivityTwo extends BaseActivity implements OnClickListener {
 				return;
 			}
 
-			if (Utils.isEmpty(faceurl)) {
-				ToastUtil.makeShortText(this, "请上传头像图片");
-				return;
-			}
-
-			if (Utils.isEmpty(cardurl)) {
-				ToastUtil.makeShortText(this, "请上传身份证图片");
-				return;
-			}
+//			if (Utils.isEmpty(faceurl)) {
+//				ToastUtil.makeShortText(this, "请上传头像图片");
+//				return;
+//			}
+//
+//			if (Utils.isEmpty(cardurl)) {
+//				ToastUtil.makeShortText(this, "请上传身份证图片");
+//				return;
+//			}
 
 			//
 
@@ -585,8 +585,10 @@ public class SignedActivityTwo extends BaseActivity implements OnClickListener {
 		map.put("card", card);
 		map.put("mail", mail);
 		map.put("realname", realname);
+		if (!Utils.isEmpty(cardUrl)) 
 		map.put("cardUrl", cardUrl);
 		map.put("role", role);
+		if (!Utils.isEmpty(portrait)) 
 		map.put("portrait", portrait);
 		AnsynHttpRequest.requestGetOrPost(AnsynHttpRequest.POST, SignedActivityTwo.this, url, map, callbackData,
 				GlobalVariables.getRequestQueue(SignedActivityTwo.this), HttpStaticApi.register_Http, null, loadedtype);

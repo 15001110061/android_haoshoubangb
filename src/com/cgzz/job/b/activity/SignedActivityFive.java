@@ -198,14 +198,24 @@ public class SignedActivityFive extends BaseActivity
 			// Í·Ïñ
 			ImageListener listener = ImageLoader.getImageListener(iv_signed_photo_face, R.drawable.icon_nor_user,
 					R.drawable.icon_nor_user);
-			mImageLoader.get(bundle.get("license_photos").toString(), listener);
+			try {
+				mImageLoader.get(bundle.get("license_photos").toString(), listener);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		
 			cardurl = bundle.get("license_photos").toString();
 		}
 		if (!"".equals(bundle.get("front_photos"))) {
 			// Í·Ïñ
 			ImageListener listener = ImageLoader.getImageListener(iv_signed_photo_card, R.drawable.icon_nor_user,
 					R.drawable.icon_nor_user);
-			mImageLoader.get(bundle.get("front_photos").toString(), listener);
+			try {
+				mImageLoader.get(bundle.get("front_photos").toString(), listener);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			
 			faceurl = bundle.get("front_photos").toString();
 		}
 
@@ -635,6 +645,7 @@ public class SignedActivityFive extends BaseActivity
 		map.put("address", address + "");
 		map.put("phone", phone + "");
 		map.put("roomcounts", roomcounts + "");
+		if (!Utils.isEmpty(msUrl)) 
 		map.put("msUrl", msUrl + "");
 
 		if (!Utils.isEmpty(hotelid)) {
@@ -645,6 +656,7 @@ public class SignedActivityFive extends BaseActivity
 		map.put("longitude", longitude + "");
 		map.put("cityno", cityno + "");
 		map.put("zzjgdm", zzjgdm + "");
+		if (!Utils.isEmpty(yyzzUrl)) 
 		map.put("yyzzUrl", yyzzUrl + "");
 		map.put("star", star);
 

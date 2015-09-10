@@ -69,7 +69,12 @@ public class MembersAddActivity extends BaseActivity implements OnClickListener,
 						// Í·Ïñ
 						ImageListener listener = ImageLoader.getImageListener(iv_my_pic, R.drawable.image_moren_pop,
 								R.drawable.image_moren_pop);
-						mImageLoader.get(bundle.getString("portrait"), listener);
+						try {
+							mImageLoader.get(bundle.getString("portrait"), listener);
+						} catch (Exception e) {
+							// TODO: handle exception
+						}
+					
 					}
 
 					break;
