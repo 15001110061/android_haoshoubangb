@@ -109,8 +109,13 @@ public class MainOrdersFragment extends BaseActivity implements OnClickListener,
 							lvCurrent.onLoadMorNodata();
 						} else {
 							lvCurrent.setCanLoadMore(false);
-							lvCurrent.addHeaderView(nowanchengorders);
-							lvCurrent.setAdapter(Currentadapter);
+						
+							try {
+								lvCurrent.addHeaderView(nowanchengorders);
+								lvCurrent.setAdapter(Currentadapter);
+							} catch (Exception e) {
+								ToastUtil.makeShortText(MainOrdersFragment.this, "暂无数据");
+							}
 						}
 
 					}
@@ -155,8 +160,13 @@ public class MainOrdersFragment extends BaseActivity implements OnClickListener,
 							lvFillOrders.onLoadMorNodata();
 						} else {
 							lvFillOrders.setCanLoadMore(false);
-							lvFillOrders.addHeaderView(nowanchengorders);
-							lvFillOrders.setAdapter(FillOrdersadapter);
+						
+							try {
+								lvFillOrders.addHeaderView(nowanchengorders);
+								lvFillOrders.setAdapter(FillOrdersadapter);
+							} catch (Exception e) {
+								ToastUtil.makeShortText(MainOrdersFragment.this, "暂无数据");
+							}
 						}
 					}
 
@@ -220,8 +230,13 @@ public class MainOrdersFragment extends BaseActivity implements OnClickListener,
 							lvreviews.onLoadMorNodata();
 						} else {
 							lvreviews.setCanLoadMore(false);
-							lvreviews.addHeaderView(nowanchengorders);
-							lvreviews.setAdapter(reviewsAdapter);
+					
+							try {
+								lvreviews.addHeaderView(nowanchengorders);
+								lvreviews.setAdapter(reviewsAdapter);
+							} catch (Exception e) {
+								ToastUtil.makeShortText(MainOrdersFragment.this, "暂无数据");
+							}
 						}
 
 					}

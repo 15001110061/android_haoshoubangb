@@ -44,8 +44,7 @@ import android.widget.TextView;
 /***
  * @author wjm 我的收藏
  */
-public class CollectionActivity extends BaseActivity implements
-		OnClickListener, OnTelClickListener {
+public class CollectionActivity extends BaseActivity implements OnClickListener, OnTelClickListener {
 	private ArrayList<Map<String, String>> shufflingList;
 	private ViewPager viewpager;
 	private CustomListView lvCollection;
@@ -55,8 +54,7 @@ public class CollectionActivity extends BaseActivity implements
 	private ObserverCallBack callBack = new ObserverCallBack() {
 
 		@Override
-		public void back(String data, int encoding, int method, Object obj,
-				boolean loadedtype) {
+		public void back(String data, int encoding, int method, Object obj, boolean loadedtype) {
 			dismissWaitDialog();
 			Bundle bundle = null;
 			switch (method) {
@@ -72,12 +70,9 @@ public class CollectionActivity extends BaseActivity implements
 
 					bundle = ParserUtil.ParserCollectionB(data);
 
-					if (((ArrayList<Map<String, String>>) bundle
-							.getSerializable("list")).size() > 0) {
+					if (((ArrayList<Map<String, String>>) bundle.getSerializable("list")).size() > 0) {
 						btn_shanchu.setVisibility(View.VISIBLE);
-						CollectionData
-								.addAll((ArrayList<Map<String, String>>) bundle
-										.getSerializable("list"));
+						CollectionData.addAll((ArrayList<Map<String, String>>) bundle.getSerializable("list"));
 						lvCollection.setCanLoadMore(true);
 						lvCollection.removeHeaderView(nowanchengorders);
 					} else {
@@ -86,8 +81,13 @@ public class CollectionActivity extends BaseActivity implements
 							lvCollection.onLoadMorNodata();
 						} else {
 							lvCollection.setCanLoadMore(false);
-							lvCollection.addHeaderView(nowanchengorders);
-							lvCollection.setAdapter(Collectionadapter);
+
+							try {
+								lvCollection.addHeaderView(nowanchengorders);
+								lvCollection.setAdapter(Collectionadapter);
+							} catch (Exception e) {
+								ToastUtil.makeShortText(CollectionActivity.this, "暂无数据");
+							}
 						}
 					}
 
@@ -108,19 +108,16 @@ public class CollectionActivity extends BaseActivity implements
 				case HttpStaticApi.SUCCESS_HTTP:
 
 					bundle = ParserUtil.ParserMsg(data);
-					ToastUtil.makeShortText(CollectionActivity.this, bundle
-							.get("msg").toString());
+					ToastUtil.makeShortText(CollectionActivity.this, bundle.get("msg").toString());
 					logoCollection = 1;
-					collection(UrlConfig.collectionB_Http,
-							application.getToken(), application.getUserId(),
+					collection(UrlConfig.collectionB_Http, application.getToken(), application.getUserId(),
 							logoCollection, true);
 					break;
 				case HttpStaticApi.FAILURE_HTTP:
 					break;
 				case HttpStaticApi.FAILURE_MSG_HTTP:
 					bundle = ParserUtil.ParserMsg(data);
-					ToastUtil.makeShortText(CollectionActivity.this, bundle
-							.get("msg").toString());
+					ToastUtil.makeShortText(CollectionActivity.this, bundle.get("msg").toString());
 					break;
 
 				default:
@@ -137,8 +134,7 @@ public class CollectionActivity extends BaseActivity implements
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_collection);
-		setTitle("我的收藏", true, TITLE_TYPE_IMG, R.drawable.stub_back, false,
-				TITLE_TYPE_TEXT, "注册");
+		setTitle("我的收藏", true, TITLE_TYPE_IMG, R.drawable.stub_back, false, TITLE_TYPE_TEXT, "注册");
 		initView();
 
 	}
@@ -171,22 +167,19 @@ public class CollectionActivity extends BaseActivity implements
 		LayoutInflater inflater = getLayoutInflater();
 		// 设置滑动线的宽度
 		int h = d.getHeight();
-		int px173 = getResources()
-				.getDimensionPixelSize(R.dimen.dd_dimen_269px)
+		int px173 = getResources().getDimensionPixelSize(R.dimen.dd_dimen_269px)
 				+ getStatusHeight(CollectionActivity.this);//
 
 		nowanchengorders = inflater.inflate(R.layout.layout_noshoucang, null);
-		RelativeLayout rl_nologo_2 = (RelativeLayout) nowanchengorders
-				.findViewById(R.id.rl_nologo_3);
-		rl_nologo_2.setLayoutParams(new RelativeLayout.LayoutParams(
-				RelativeLayout.LayoutParams.FILL_PARENT, h - px173));
+		RelativeLayout rl_nologo_2 = (RelativeLayout) nowanchengorders.findViewById(R.id.rl_nologo_3);
+		rl_nologo_2
+				.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.FILL_PARENT, h - px173));
 
 		// 填充listview
 		List<ListView> listviews = new ArrayList<ListView>();
 		lvCollection = new CustomListView(CollectionActivity.this);
 		lvCollection.setFadingEdgeLength(0);
-		lvCollection
-				.setDivider(getResources().getDrawable(R.color.common_grey));
+		lvCollection.setDivider(getResources().getDrawable(R.color.common_grey));
 		lvCollection.setDividerHeight(Utils.dip2px(CollectionActivity.this, 0));
 		lvCollection.setFooterDividersEnabled(false);
 		lvCollection.setCanRefresh(true);// 关闭下拉刷新
@@ -200,8 +193,8 @@ public class CollectionActivity extends BaseActivity implements
 			@Override
 			public void onLoadMore() {
 
-				collection(UrlConfig.collectionB_Http, application.getToken(),
-						application.getUserId(), logoCollection, false);
+				collection(UrlConfig.collectionB_Http, application.getToken(), application.getUserId(), logoCollection,
+						false);
 			}
 		});
 
@@ -211,19 +204,17 @@ public class CollectionActivity extends BaseActivity implements
 			public void onRefresh() {
 				lvCollection.removeHeaderView(nowanchengorders);
 				logoCollection = 1;
-				collection(UrlConfig.collectionB_Http, application.getToken(),
-						application.getUserId(), logoCollection, true);
+				collection(UrlConfig.collectionB_Http, application.getToken(), application.getUserId(), logoCollection,
+						true);
 
 			}
 		});
 		logoCollection = 1;
-		collection(UrlConfig.collectionB_Http, application.getToken(),
-				application.getUserId(), logoCollection, true);
+		collection(UrlConfig.collectionB_Http, application.getToken(), application.getUserId(), logoCollection, true);
 		lvCollection.setAdapter(Collectionadapter);
 
 		listviews.add(lvCollection);
-		ConsultingPagerAdapter pagerAdapter = new ConsultingPagerAdapter(
-				listviews);
+		ConsultingPagerAdapter pagerAdapter = new ConsultingPagerAdapter(listviews);
 		viewpager.setAdapter(pagerAdapter);
 	}
 
@@ -247,8 +238,7 @@ public class CollectionActivity extends BaseActivity implements
 
 			char ch = ',';
 			if (!"".equals(params.toString()))
-				deleteCollection(UrlConfig.deleteCollectionB_Http,
-						application.getToken(), application.getUserId(),
+				deleteCollection(UrlConfig.deleteCollectionB_Http, application.getToken(), application.getUserId(),
 						trimFirstAndLastChar(params.toString(), ch), true);
 			break;
 
@@ -262,8 +252,8 @@ public class CollectionActivity extends BaseActivity implements
 		boolean endIndexFlag = true;
 		do {
 			int beginIndex = source.indexOf(element) == 0 ? 1 : 0;
-			int endIndex = source.lastIndexOf(element) + 1 == source.length() ? source
-					.lastIndexOf(element) : source.length();
+			int endIndex = source.lastIndexOf(element) + 1 == source.length() ? source.lastIndexOf(element)
+					: source.length();
 			source = source.substring(beginIndex, endIndex);
 			beginIndexFlag = (source.indexOf(element) == 0);
 			endIndexFlag = (source.lastIndexOf(element) + 1 == source.length());
@@ -271,8 +261,7 @@ public class CollectionActivity extends BaseActivity implements
 		return source;
 	}
 
-	private void collection(String url, String token, String userid, int page,
-			boolean loadedtype) {
+	private void collection(String url, String token, String userid, int page, boolean loadedtype) {
 		showWaitDialog();
 		HashMap map = new HashMap<String, String>();
 		map.put("apptype", "1");
@@ -280,14 +269,12 @@ public class CollectionActivity extends BaseActivity implements
 
 		map.put("userid", userid);
 		map.put("page", page + "");
-		AnsynHttpRequest.requestGetOrPost(AnsynHttpRequest.POST,
-				CollectionActivity.this, url, map, callBack,
-				GlobalVariables.getRequestQueue(CollectionActivity.this),
-				HttpStaticApi.collectionB_Http, null, loadedtype);
+		AnsynHttpRequest.requestGetOrPost(AnsynHttpRequest.POST, CollectionActivity.this, url, map, callBack,
+				GlobalVariables.getRequestQueue(CollectionActivity.this), HttpStaticApi.collectionB_Http, null,
+				loadedtype);
 	}
 
-	private void deleteCollection(String url, String token, String userid,
-			String workerid, boolean loadedtype) {
+	private void deleteCollection(String url, String token, String userid, String workerid, boolean loadedtype) {
 		showWaitDialog();
 		HashMap map = new HashMap<String, String>();
 		map.put("apptype", "1");
@@ -296,10 +283,9 @@ public class CollectionActivity extends BaseActivity implements
 		map.put("userid", userid);
 		map.put("workerid", workerid);
 
-		AnsynHttpRequest.requestGetOrPost(AnsynHttpRequest.POST,
-				CollectionActivity.this, url, map, callBack,
-				GlobalVariables.getRequestQueue(CollectionActivity.this),
-				HttpStaticApi.deleteCollectionB_Http, null, loadedtype);
+		AnsynHttpRequest.requestGetOrPost(AnsynHttpRequest.POST, CollectionActivity.this, url, map, callBack,
+				GlobalVariables.getRequestQueue(CollectionActivity.this), HttpStaticApi.deleteCollectionB_Http, null,
+				loadedtype);
 	}
 
 	/***
@@ -326,8 +312,7 @@ public class CollectionActivity extends BaseActivity implements
 		popTheirProfile.setAnimationStyle(R.style.MyPopupAnimation);
 		popTheirProfile.setWidth(LayoutParams.FILL_PARENT);
 		popTheirProfile.setHeight(LayoutParams.WRAP_CONTENT);
-		popTheirProfile.showAtLocation(findViewById(R.id.rl_seting_two),
-				Gravity.BOTTOM, 0, 0);
+		popTheirProfile.showAtLocation(findViewById(R.id.rl_seting_two), Gravity.BOTTOM, 0, 0);
 
 		TextView up = (TextView) popView.findViewById(R.id.tv_pop_up);
 		TextView title = (TextView) popView.findViewById(R.id.tv_title);
@@ -342,8 +327,7 @@ public class CollectionActivity extends BaseActivity implements
 			@Override
 			public void onClick(View v) {
 				popTheirProfile.dismiss();
-				Utils.calls(tel,
-						CollectionActivity.this);
+				Utils.calls(tel, CollectionActivity.this);
 
 			}
 		});
@@ -367,19 +351,15 @@ public class CollectionActivity extends BaseActivity implements
 	public int getStatusHeight(Activity activity) {
 		int statusHeight = 0;
 		Rect localRect = new Rect();
-		activity.getWindow().getDecorView()
-				.getWindowVisibleDisplayFrame(localRect);
+		activity.getWindow().getDecorView().getWindowVisibleDisplayFrame(localRect);
 		statusHeight = localRect.top;
 		if (0 == statusHeight) {
 			Class<?> localClass;
 			try {
 				localClass = Class.forName("com.android.internal.R$dimen");
 				Object localObject = localClass.newInstance();
-				int i5 = Integer.parseInt(localClass
-						.getField("status_bar_height").get(localObject)
-						.toString());
-				statusHeight = activity.getResources()
-						.getDimensionPixelSize(i5);
+				int i5 = Integer.parseInt(localClass.getField("status_bar_height").get(localObject).toString());
+				statusHeight = activity.getResources().getDimensionPixelSize(i5);
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
 			} catch (IllegalAccessException e) {

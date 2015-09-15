@@ -86,7 +86,7 @@ public class FillOrdersAdapter extends BaseAdapter {
 
 			holder.tv_current_feiyong = (TextView) convertView.findViewById(R.id.tv_current_feiyong);
 
-			holder.tv_current_quxiao = (TextView) convertView.findViewById(R.id.tv_current_quxiao);
+//			holder.tv_current_quxiao = (TextView) convertView.findViewById(R.id.tv_current_quxiao);
 
 			convertView.setTag(holder);
 		} else {
@@ -99,7 +99,7 @@ public class FillOrdersAdapter extends BaseAdapter {
 			holder.tv_current_state.setText("已取消");
 		} else if ("2".equals(status) || "3".equals(status)) {
 			holder.tv_current_state.setText("已完成");
-			holder.tv_current_quxiao.setVisibility(View.GONE);
+//			holder.tv_current_quxiao.setVisibility(View.GONE);
 
 		}
 		holder.tv_current_name.setText(map.get("bangkesname"));
@@ -114,7 +114,7 @@ public class FillOrdersAdapter extends BaseAdapter {
 		holder.tv_current_time.setText("开始时间:" + map.get("dutydate"));
 
 		holder.tv_current_feiyong.setText("工作费用:" + map.get("totalprice"));
-		holder.tv_current_quxiao.setText("取消理由:" + map.get("dict_value"));
+//		holder.tv_current_quxiao.setText("取消理由:" + map.get("dict_value"));
 		String image = map.get("bangkesportrait");
 
 		ImageListener listener2 = ImageLoader.getImageListener(holder.tv_current_picture, R.drawable.image_moren,

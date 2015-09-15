@@ -169,21 +169,24 @@ public class PayChooseActivity extends BaseActivity implements OnClickListener {
 		rl_paychoose_1 = (RelativeLayout) findViewById(R.id.rl_paychoose_1);
 		tv_paycash_titles = (TextView) findViewById(R.id.tv_paycash_titles);
 		tv_paycash_titles.setText("гд" + totalPrice);
-		if ("0".equals(isSign)) {
-			rl_paychoose_4.setVisibility(View.GONE);
-		} else {
-			rl_paychoose_4.setVisibility(View.VISIBLE);
-		}
+	
 
 		if ("1".equals(iscash)) {
 			rl_paychoose_1.setVisibility(View.VISIBLE);
 			rl_paychoose_2.setVisibility(View.GONE);
 			rl_paychoose_3.setVisibility(View.GONE);
-			rl_paychoose_4.setVisibility(View.GONE);
 
 		} else {
-			rl_paychoose_1.setVisibility(View.GONE);
+			rl_paychoose_1.setVisibility(View.VISIBLE);
+			rl_paychoose_2.setVisibility(View.VISIBLE);
+			rl_paychoose_3.setVisibility(View.VISIBLE);
 
+		}
+		
+		if ("0".equals(isSign)) {
+			rl_paychoose_4.setVisibility(View.GONE);
+		} else {
+			rl_paychoose_4.setVisibility(View.VISIBLE);
 		}
 
 	}

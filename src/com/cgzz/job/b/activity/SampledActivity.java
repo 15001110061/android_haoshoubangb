@@ -103,8 +103,13 @@ public class SampledActivity extends BaseActivity implements OnClickListener,
 							lvCurrent.onLoadMorNodata();
 						} else {
 							lvCurrent.setCanLoadMore(false);
-							lvCurrent.addHeaderView(nowanchengorders);
-							lvCurrent.setAdapter(sampledWaitingAdapter);
+						
+							try {
+								lvCurrent.addHeaderView(nowanchengorders);
+								lvCurrent.setAdapter(sampledWaitingAdapter);
+							} catch (Exception e) {
+								ToastUtil.makeShortText(SampledActivity.this, "暂无数据");
+							}
 						}
 
 					}
@@ -153,8 +158,14 @@ public class SampledActivity extends BaseActivity implements OnClickListener,
 							lvFillOrders.onLoadMorNodata();
 						} else {
 							lvFillOrders.setCanLoadMore(false);
-							lvFillOrders.addHeaderView(nowanchengorders);
-							lvFillOrders.setAdapter(sampledAlreadyAdapter);
+					
+							
+							try {
+								lvFillOrders.addHeaderView(nowanchengorders);
+								lvFillOrders.setAdapter(sampledAlreadyAdapter);
+							} catch (Exception e) {
+								ToastUtil.makeShortText(SampledActivity.this, "暂无数据");
+							}
 						}
 					}
 
