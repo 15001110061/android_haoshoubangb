@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.support.v4.util.LruCache;
@@ -72,6 +73,11 @@ public class MembersAdapter extends BaseAdapter {
 
 	private View getInviteView(final int position, View convertView) {
 		ViewHolder holder;
+		  View currentFocus = ((Activity)context).getCurrentFocus();
+			
+		    if (currentFocus != null) {
+		        currentFocus.clearFocus();
+		    }
 		if (convertView == null) {
 			convertView = inflater.inflate(R.layout.activity_members_item, null);
 			holder = new ViewHolder();

@@ -4,6 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.ImageLoader.ImageCache;
+import com.android.volley.toolbox.ImageLoader.ImageListener;
+import com.cgzz.job.b.R;
+import com.cgzz.job.b.application.GlobalVariables;
+
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.support.v4.util.LruCache;
@@ -12,15 +19,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import com.android.volley.toolbox.ImageLoader;
-import com.android.volley.toolbox.ImageLoader.ImageCache;
-import com.android.volley.toolbox.ImageLoader.ImageContainer;
-import com.android.volley.toolbox.ImageLoader.ImageListener;
-import com.cgzz.job.b.R;
-import com.cgzz.job.b.adapter.CurrentAdapter.OnZFClickListener;
-import com.cgzz.job.b.application.GlobalVariables;
 
 /***
  * 完成订单适配器
@@ -70,6 +70,12 @@ public class FillOrdersAdapter extends BaseAdapter {
 
 	private View getInviteView(final int position, View convertView) {
 		ViewHolder holder;
+		  View currentFocus = ((Activity)context).getCurrentFocus();
+		
+		    if (currentFocus != null) {
+		        currentFocus.clearFocus();
+		    }
+		
 		if (convertView == null) {
 			convertView = inflater.inflate(R.layout.fragment_wancheng_item, null);
 			holder = new ViewHolder();
@@ -85,7 +91,7 @@ public class FillOrdersAdapter extends BaseAdapter {
 			holder.tv_current_time = (TextView) convertView.findViewById(R.id.tv_current_time);
 
 			holder.tv_current_feiyong = (TextView) convertView.findViewById(R.id.tv_current_feiyong);
-
+			holder.ll_current = (LinearLayout) convertView.findViewById(R.id.ll_current);
 //			holder.tv_current_quxiao = (TextView) convertView.findViewById(R.id.tv_current_quxiao);
 
 			convertView.setTag(holder);
@@ -126,6 +132,7 @@ public class FillOrdersAdapter extends BaseAdapter {
 		}
 
 		holder.tv_current_picture.setOnClickListener(new ZFOnClickListener(position));
+		holder.ll_current .setOnClickListener(new ZFOnClickListener(position));
 		// if (image != null && !"".equals(image)) {
 		// ImageListener listener = ImageLoader.getImageListener(
 		// holder.tv_current_picture, R.drawable.image_moren,
@@ -138,7 +145,7 @@ public class FillOrdersAdapter extends BaseAdapter {
 
 	class ViewHolder {
 		ImageView tv_current_picture;
-
+		LinearLayout ll_current;
 		TextView tv_current_name, tv_current_state, tv_current_room, tv_current_peonumber2, tv_current_time,
 				tv_current_feiyong,
 

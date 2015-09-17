@@ -19,7 +19,7 @@ import com.cgzz.job.b.BaseActivityCloseListener;
 public class GlobalVariables extends LitePalApplication {
 	
 	
-	public boolean isAnnouncement  = true;//
+	public boolean isAnnouncement  = false;//
 	
 	
 	public SparseArray<SparseArray<BaseActivityCloseListener>> closeMap;

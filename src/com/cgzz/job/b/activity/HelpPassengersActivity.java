@@ -161,10 +161,11 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 	EditText et_help_biaojian, et_help_taofang;
 	private CityPicker cityPicker;
 	RelativeLayout ll_time;
-	TextView timeok, timecancel,iv_seting_newsremind2;
-//	CheckBox cb_seting_shoushi;
+	TextView timeok, timecancel, iv_seting_newsremind2;
+	// CheckBox cb_seting_shoushi;
 	ImageButton dis;
 	TitleBarView mTitleBarView;
+
 	private void findView() {
 		//
 		ll_time = (RelativeLayout) findViewById(R.id.ll_time);
@@ -209,7 +210,7 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 		tv_help_ba = (TextView) findViewById(R.id.tv_help_ba);
 		tv_help_liu = (TextView) findViewById(R.id.tv_help_liu);
 		//
-//		cb_seting_shoushi = (CheckBox) findViewById(R.id.cb_seting_shoushi);
+		// cb_seting_shoushi = (CheckBox) findViewById(R.id.cb_seting_shoushi);
 		//
 		rl_help_time1 = (RelativeLayout) findViewById(R.id.rl_help_time1);
 		rl_help_time2 = (RelativeLayout) findViewById(R.id.rl_help_time2);
@@ -223,11 +224,10 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 		rl_help_time3.setVisibility(View.GONE);
 		rl_help_time4.setVisibility(View.VISIBLE);
 		//
-		
+
 		mTitleBarView = (TitleBarView) findViewById(R.id.title_bar);
-		iv_seting_newsremind2= (TextView) findViewById(R.id.iv_seting_newsremind2);
-		mTitleBarView.setCommonTitle(View.GONE, View.GONE, View.VISIBLE,
-				View.VISIBLE);
+		iv_seting_newsremind2 = (TextView) findViewById(R.id.iv_seting_newsremind2);
+		mTitleBarView.setCommonTitle(View.GONE, View.GONE, View.VISIBLE, View.VISIBLE);
 
 		mTitleBarView.getTitleLeft().setOnClickListener(new OnClickListener() {
 			@SuppressLint("NewApi")
@@ -237,12 +237,12 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 					mTitleBarView.getTitleLeft().setEnabled(false);
 					mTitleBarView.getTitleRight().setEnabled(true);
 					iv_seting_newsremind2.setVisibility(View.GONE);
-					
+
 					rl_help_time1.setVisibility(View.GONE);
 					rl_help_time2.setVisibility(View.GONE);
 					rl_help_time3.setVisibility(View.GONE);
 					rl_help_time4.setVisibility(View.VISIBLE);
-					
+
 				}
 			}
 		});
@@ -290,7 +290,7 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 
 		et_help_biaojian.addTextChangedListener(textWatcher);
 		et_help_taofang.addTextChangedListener(textWatcher);
-//		cb_seting_shoushi.setOnCheckedChangeListener(this);
+		// cb_seting_shoushi.setOnCheckedChangeListener(this);
 
 		tv_help_time1.setOnClickListener(this);
 		tv_help_time2.setOnClickListener(this);
@@ -321,13 +321,16 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 
 	public static void closeInputMethod(Activity context) {
 		try {
-			InputMethodManager inputMethodManager = (InputMethodManager) context
-					.getSystemService(Context.INPUT_METHOD_SERVICE);
-			inputMethodManager.hideSoftInputFromWindow(context.getCurrentFocus().getWindowToken(),
-					InputMethodManager.HIDE_NOT_ALWAYS);
+			 InputMethodManager inputMethodManager = (InputMethodManager)
+			 context
+			 .getSystemService(Context.INPUT_METHOD_SERVICE);
+			 inputMethodManager.hideSoftInputFromWindow(context.getCurrentFocus().getWindowToken(),
+			 InputMethodManager.HIDE_NOT_ALWAYS);
 
+//		        InputMethodManager imm = (InputMethodManager) context.getSystemService(INPUT_METHOD_SERVICE);  
+//		    imm.hideSoftInputFromWindow(context.getCurrentFocus().getWindowToken(), 0);  
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println("wjm====="+e);
 		}
 	}
 
@@ -342,10 +345,10 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 		String taofangshuliang = "";
 		String taofangjiage = "";
 		String bangkerenshu = "";
-
+		closeInputMethod(HelpPassengersActivity.this);
 		switch (arg0.getId()) {
 		case R.id.tv_help_time:// 选择时间
-			closeInputMethod(HelpPassengersActivity.this);
+		
 			// ll.setVisibility(View.VISIBLE);
 			ll_time.setVisibility(View.VISIBLE);
 			cityPicker.setData();
@@ -424,23 +427,13 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 		case R.id.tv_help_zhaobangke2:
 			String time = tv_help_time.getText().toString();
 			String time3 = tv_help_time3.getText().toString();
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+
 			if (!mTitleBarView.getTitleLeft().isEnabled()) {
 				if (Utils.isEmpty(time)) {
 					ToastUtil.makeShortText(this, "请选择时间");
 					return;
 				}
-			}else{
+			} else {
 				if (Utils.isEmpty(time3)) {
 					ToastUtil.makeShortText(this, "请选择每天上班时间");
 					return;
@@ -518,13 +511,17 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 				if (mTitleBarView.getTitleLeft().isEnabled()) {
 					int i = CalculationTime(start, end);
 					if (i < 7 && i > 0) {
-						createOrderbB(UrlConfig.createOrderbB, application.getUserId(), application.getToken(), tv_help_time1.getText().toString()+" "+time3,
-								biaojianshuliang, biaojianjiage, taofangshuliang, taofangjiage, bangkerenshu, bounus,
-								havebar, havelaunch, iscash, mes, Voiceurl, length, tv_help_time1.getText().toString(),tv_help_time2.getText().toString(),true);
+						createOrderbB(UrlConfig.createOrderbB, application.getUserId(), application.getToken(),
+								tv_help_time1.getText().toString() + " " + time3, biaojianshuliang, biaojianjiage,
+								taofangshuliang, taofangjiage, bangkerenshu, bounus, havebar, havelaunch, iscash, mes,
+								Voiceurl, length, tv_help_time1.getText().toString(),
+								tv_help_time2.getText().toString(), true);
 					} else if (i < 0 && i < -358) {
-						createOrderbB(UrlConfig.createOrderbB, application.getUserId(), application.getToken(), tv_help_time1.getText().toString()+" "+time3,
-								biaojianshuliang, biaojianjiage, taofangshuliang, taofangjiage, bangkerenshu, bounus,
-								havebar, havelaunch, iscash, mes, Voiceurl, length,tv_help_time1.getText().toString(),tv_help_time2.getText().toString(), true);
+						createOrderbB(UrlConfig.createOrderbB, application.getUserId(), application.getToken(),
+								tv_help_time1.getText().toString() + " " + time3, biaojianshuliang, biaojianjiage,
+								taofangshuliang, taofangjiage, bangkerenshu, bounus, havebar, havelaunch, iscash, mes,
+								Voiceurl, length, tv_help_time1.getText().toString(),
+								tv_help_time2.getText().toString(), true);
 					} else if (i == 0) {
 						ToastUtil.makeShortText(HelpPassengersActivity.this, "请选择不同的时间");
 					} else {
@@ -533,7 +530,7 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 				} else {
 					createOrderbB(UrlConfig.createOrderbB, application.getUserId(), application.getToken(), time,
 							biaojianshuliang, biaojianjiage, taofangshuliang, taofangjiage, bangkerenshu, bounus,
-							havebar, havelaunch, iscash, mes, Voiceurl, length,"","", true);
+							havebar, havelaunch, iscash, mes, Voiceurl, length, "", "", true);
 				}
 
 			} else {
@@ -619,12 +616,12 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 					times.append(df.format(calendar.getTime()));
 				} else if ("后天".equals(cityPicker.getCity_string1())) {
 					calendar.roll(java.util.Calendar.DAY_OF_YEAR, 2);
-				
+
 					times.append(df.format(calendar.getTime()));
-				}else {
-			
-					times.append(cityPicker.getPhotolist1().get(cityPicker.getSelected1()).getId()+" ");
-				
+				} else {
+
+					times.append(cityPicker.getPhotolist1().get(cityPicker.getSelected1()).getId() + " ");
+
 				}
 
 				times.append(cityPicker.getCity_string2().replace("点", "") + ":");
@@ -638,7 +635,7 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 				String yue = "", ri = "";
 				yue = cityPicker.getCity_string1();
 				ri = cityPicker.getCity_string2();
-//				System.out.println("wjm==长期开始===yue" + yue + "ri==" + ri);
+				// System.out.println("wjm==长期开始===yue" + yue + "ri==" + ri);
 				times.append(yue.replace("月", "") + "-");// 月
 				times.append(ri.replace("日", "") + " ");// 日
 				tv_help_time1.setText(times.toString() + "");
@@ -652,7 +649,7 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 				yue = cityPicker.getCity_string1();
 				ri = cityPicker.getCity_string2();
 
-//				System.out.println("wjm==长期结束===yue" + yue + "ri==" + ri);
+				// System.out.println("wjm==长期结束===yue" + yue + "ri==" + ri);
 				int i = CalculationTime(start, yue.replace("月", "") + ri.replace("日", ""));
 				java.text.SimpleDateFormat df = new java.text.SimpleDateFormat("yyyy");
 				java.util.Calendar calendar = java.util.Calendar.getInstance();
@@ -675,14 +672,14 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 					ToastUtil.makeShortText(HelpPassengersActivity.this, "时间请选择7天内的");
 				}
 
-			}else if (typetime ==4) {
+			} else if (typetime == 4) {
 				StringBuffer times = new StringBuffer();
 				String cqshi = "", cqfen = "";
-				
+
 				cqshi = cityPicker.getCity_string2();
 				cqfen = cityPicker.getCity_string3();
-				times.append(cqshi.replace("点", "") + ":");// 
-				times.append(cqfen+"");// 
+				times.append(cqshi.replace("点", "") + ":");//
+				times.append(cqfen + "");//
 				tv_help_time3.setText(times.toString() + "");
 			}
 			break;
@@ -708,14 +705,11 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 			break;
 
 		case R.id.tv_help_time3://
-			
-			
+
 			ll_time.setVisibility(View.VISIBLE);
 			cityPicker.setData2();
 			typetime = 4;
-			
-			
-			
+
 			break;
 
 		default:
@@ -743,7 +737,7 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 		cal1.setTime(date1);
 		cal2.setTime(date2);
 		double dayCount = (cal2.getTimeInMillis() - cal1.getTimeInMillis()) / (1000 * 3600 * 24);// 从间隔毫秒变成间隔天数
-//		System.out.println("wjm====相差" + (int) dayCount + "天");
+		// System.out.println("wjm====相差" + (int) dayCount + "天");
 
 		return (int) dayCount;
 	}
@@ -1108,8 +1102,8 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 
 	private void createOrderbB(String url, String userid, String token, String dutydate, String standardCount,
 			String standardPrice, String suiteCount, String suitePrice, String workercount, String bounus,
-			String havebar, String havelaunch, String iscash, String message, String voiceurl, String length,String begindate,String enddate,
-			boolean loadedtype) {
+			String havebar, String havelaunch, String iscash, String message, String voiceurl, String length,
+			String begindate, String enddate, boolean loadedtype) {
 		showWaitDialog();
 		HashMap map = new HashMap<String, String>();
 		map.put("userid", userid);
@@ -1149,15 +1143,13 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 			map.put("voiceurl", voiceurl);
 			map.put("length", length);
 		}
-		
+
 		if (mTitleBarView.getTitleLeft().isEnabled()) {
-			
+
 			map.put("begindate", begindate);
 			map.put("enddate", enddate);
 		}
-		
-		
-		
+
 		AnsynHttpRequest.requestGetOrPost(AnsynHttpRequest.POST, HelpPassengersActivity.this, url, map, callbackData,
 				GlobalVariables.getRequestQueue(HelpPassengersActivity.this), HttpStaticApi.createOrderbB_Http, null,
 				loadedtype);
@@ -1173,26 +1165,26 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 				loadedtype);
 	}
 
-//	@Override
-//	public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
-//		if (arg0 == cb_seting_shoushi) {
-//			if (arg1) {
-//
-//				rl_help_time1.setVisibility(View.VISIBLE);
-//				rl_help_time2.setVisibility(View.VISIBLE);
-//				rl_help_time3.setVisibility(View.VISIBLE);
-//				rl_help_time4.setVisibility(View.GONE);
-//
-//			} else {
-//
-//				rl_help_time1.setVisibility(View.GONE);
-//				rl_help_time2.setVisibility(View.GONE);
-//				rl_help_time3.setVisibility(View.GONE);
-//				rl_help_time4.setVisibility(View.VISIBLE);
-//
-//			}
-//
-//		}
-//
-//	}
+	// @Override
+	// public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
+	// if (arg0 == cb_seting_shoushi) {
+	// if (arg1) {
+	//
+	// rl_help_time1.setVisibility(View.VISIBLE);
+	// rl_help_time2.setVisibility(View.VISIBLE);
+	// rl_help_time3.setVisibility(View.VISIBLE);
+	// rl_help_time4.setVisibility(View.GONE);
+	//
+	// } else {
+	//
+	// rl_help_time1.setVisibility(View.GONE);
+	// rl_help_time2.setVisibility(View.GONE);
+	// rl_help_time3.setVisibility(View.GONE);
+	// rl_help_time4.setVisibility(View.VISIBLE);
+	//
+	// }
+	//
+	// }
+	//
+	// }
 }

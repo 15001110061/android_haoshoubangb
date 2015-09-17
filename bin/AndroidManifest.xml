@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cgzz.job.b"
     android:installLocation="auto"
-    android:versionCode="13"  
-    android:versionName="1.0.1" > 
+    android:versionCode="14"  
+    android:versionName="1.0.2" > 
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -97,6 +97,11 @@
             android:name=".activity.CollectionActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait" />
+                <activity
+            android:name=".activity.LoogPostActivitys"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" />
+        
         <activity
             android:name=".activity.TheirProfileActivity"
             android:configChanges="orientation|keyboardHidden"
@@ -198,6 +203,12 @@
             android:name=".activity.PayCashActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait" />
+        
+                <activity
+            android:name=".activity.OrderDetailsActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" />
+        
         <activity
             android:name=".activity.PayTransferActivity"
             android:configChanges="orientation|keyboardHidden"

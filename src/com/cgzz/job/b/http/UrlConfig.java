@@ -289,4 +289,11 @@ public class UrlConfig {
 	 * 建订单前返回标间套间最低价
 	 */
 	public static final String priceB_Http = GlobalVariables.ROOT + "good-help/orderb/price";
+	
+	
+	
+	/**
+	 * 已完成订单查看支付帮客金额
+	 */
+	public static final String completeDetailB_Http = GlobalVariables.ROOT + "good-help/orderb/completeDetail";
 }

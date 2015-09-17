@@ -27,15 +27,24 @@ public class MyReceiver extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		Bundle bundle = intent.getExtras();
+		application = (GlobalVariables) context.getApplicationContext();
 //		System.out.println("wjm=Jpush==onReceive :" + intent.getAction() + ", extras: " + printBundle(bundle));
 		if (JPushInterface.ACTION_REGISTRATION_ID.equals(intent.getAction())) {
-			String regId = bundle.getString(JPushInterface.EXTRA_REGISTRATION_ID);
+//			String regId = bundle.getString(JPushInterface.EXTRA_REGISTRATION_ID);
 //			System.out.println("wjm=Jpush==接收Registration Id :" + regId);
 		} else if (JPushInterface.ACTION_MESSAGE_RECEIVED.equals(intent.getAction())) {
 //			System.out.println("wjm=Jpush===接收到推送下来的自定义消息:" + bundle.getString(JPushInterface.EXTRA_MESSAGE));
 		} else if (JPushInterface.ACTION_NOTIFICATION_RECEIVED.equals(intent.getAction())) {
-			int notifactionId = bundle.getInt(JPushInterface.EXTRA_NOTIFICATION_ID);
+//			int notifactionId = bundle.getInt(JPushInterface.EXTRA_NOTIFICATION_ID);
 //			System.out.println("wjm=Jpush==接收到推送下来的通知的ID:" + notifactionId);
+//			
+//			bundles = ParserUtil.JGlJSONC(bundle.getString(JPushInterface.EXTRA_EXTRA));
+//
+//			if (bundles != null && "5".equals(bundles.getString("type"))) {
+//				application.setReddot(true);
+//				redDot(context);
+//			}
+			
 		} else if (JPushInterface.ACTION_NOTIFICATION_OPENED.equals(intent.getAction())) {
 //			System.out.println("wjm=Jpush==用户点击打开了通知");
 

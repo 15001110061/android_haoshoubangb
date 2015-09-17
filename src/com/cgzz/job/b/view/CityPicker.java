@@ -214,11 +214,11 @@ public class CityPicker extends LinearLayout {
 
 		try {
 			provincePicker.setData(mPhotolist);
-			provincePicker.setDefault(0);
+			provincePicker.setDefault(1);
 			cityPicker.setData(mPhotolist2);
-			cityPicker.setDefault(hour);
+			cityPicker.setDefault(7);
 			counyPicker.setData(mPhotolist3);
-			counyPicker.setDefault(minute / 10);
+			counyPicker.setDefault(3);//minute / 10
 		} catch (Exception e) {
 			provincePicker.setData(mPhotolist);
 			provincePicker.setDefault(0);

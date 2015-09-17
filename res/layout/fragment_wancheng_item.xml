@@ -89,6 +89,7 @@
                 android:visibility="gone" />
 
             <LinearLayout
+                           android:id="@+id/ll_current"
                 android:layout_width="fill_parent"
                 android:layout_height="@dimen/dd_dimen_220px"
                 android:layout_marginLeft="@dimen/dd_dimen_22px"

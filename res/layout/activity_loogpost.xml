@@ -1,153 +1,29 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/rl_seting_two"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/common_grey"
-    android:orientation="vertical" >
+    android:background="@color/common_grey" >
 
     <include
-        android:id="@+id/title"
+        android:id="@+id/include_stub_title"
         layout="@layout/stub_title" />
 
     <RelativeLayout
-        android:id="@+id/rl_lp_1"
         android:layout_width="fill_parent"
-        android:layout_height="@dimen/dd_dimen_100px"
-        android:layout_below="@id/title"
-        android:layout_marginBottom="@dimen/dd_dimen_52px"
-        android:layout_marginTop="@dimen/dd_dimen_44px"
-        android:gravity="center"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/include_stub_title"
         android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/tv_lp_img"
-            android:layout_width="@dimen/dd_dimen_100px"
-            android:layout_height="@dimen/dd_dimen_100px"
-            android:background="@drawable/xiaolian"
-            android:gravity="center"
-            android:textColor="@color/common_message"
-            android:textSize="@dimen/dd_dimen_32px" />
-
-        <TextView
-            android:id="@+id/tv_lp_title1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/tv_lp_img"
-            android:layout_alignBottom="@+id/tv_lp_img"
-            android:layout_marginLeft="@dimen/dd_dimen_30px"
-            android:layout_toRightOf="@+id/tv_lp_img"
-            android:gravity="center"
-            android:text="0"
-            android:textColor="@color/common_yellow"
-            android:textSize="@dimen/dd_dimen_36px" />
-
-        <TextView
-            android:id="@+id/tv_lp_title2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/tv_lp_title1"
-            android:layout_alignBottom="@+id/tv_lp_title1"
-            android:layout_toRightOf="@+id/tv_lp_title1"
-            android:gravity="center"
-            android:text="位已经到达"
-            android:textColor="@color/common_message"
-            android:textSize="@dimen/dd_dimen_36px" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/rl_lp_3"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rl_lp_1"
-        android:background="@color/common_white"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:paddingBottom="@dimen/dd_dimen_30px"
-        android:paddingTop="@dimen/dd_dimen_30px" >
-
-        <com.cgzz.job.b.view.HorizontalListView
-            android:id="@+id/hl_lp_1"
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
             android:layout_width="fill_parent"
-            android:layout_height="@dimen/dd_dimen_160px" >
-        </com.cgzz.job.b.view.HorizontalListView>
+            android:layout_height="fill_parent"
+            android:layout_above="@+id/ll"
+            android:flipInterval="30"
+            android:persistentDrawingCache="animation" >
+        </android.support.v4.view.ViewPager>
+
+       
     </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/rl_lp_2"
-        android:layout_width="fill_parent"
-        android:layout_height="@dimen/dd_dimen_100px"
-        android:layout_below="@id/rl_lp_3"
-        android:layout_marginBottom="@dimen/dd_dimen_52px"
-        android:layout_marginTop="@dimen/dd_dimen_48px"
-        android:gravity="center"
-        android:orientation="vertical" >
-
-        <TextView
-            android:id="@+id/tv_lp_img2"
-            android:layout_width="@dimen/dd_dimen_100px"
-            android:layout_height="@dimen/dd_dimen_100px"
-            android:background="@drawable/kulian"
-            android:gravity="center"
-            android:textColor="@color/common_message"
-            android:textSize="@dimen/dd_dimen_32px" />
-
-        <TextView
-            android:id="@+id/tv_lp_title3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/tv_lp_img2"
-            android:layout_alignBottom="@+id/tv_lp_img2"
-            android:layout_marginLeft="@dimen/dd_dimen_30px"
-            android:layout_toRightOf="@+id/tv_lp_img2"
-            android:gravity="center"
-            android:text="0"
-            android:textColor="@color/common_yellow"
-            android:textSize="@dimen/dd_dimen_36px" />
-
-        <TextView
-            android:id="@+id/tv_lp_title4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/tv_lp_title3"
-            android:layout_alignBottom="@+id/tv_lp_title3"
-            android:layout_toRightOf="@+id/tv_lp_title3"
-            android:gravity="center"
-            android:text="位飞奔在路上"
-            android:textColor="@color/common_message"
-            android:textSize="@dimen/dd_dimen_36px" />
-    </RelativeLayout>
-
-
-    
-    
-    
-        <RelativeLayout
-        android:id="@+id/rl_lp_4"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rl_lp_2"
-        android:background="@color/common_white"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:paddingBottom="@dimen/dd_dimen_30px"
-        android:paddingTop="@dimen/dd_dimen_30px" >
-
-        
-        
-            <com.cgzz.job.b.view.HorizontalListView
-        android:id="@+id/hl_lp_2"
-        android:layout_width="fill_parent"
-        android:layout_height="@dimen/dd_dimen_160px"
- >
-    </com.cgzz.job.b.view.HorizontalListView>
-    </RelativeLayout>
-    
-    
-    
-    
-    
-    
-    
 
 </RelativeLayout>

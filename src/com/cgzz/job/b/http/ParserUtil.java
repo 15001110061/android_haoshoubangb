@@ -5020,13 +5020,21 @@ public class ParserUtil {
 							hMap = new HashMap<String, String>();
 							optJSONObject = optJSONArray.optJSONObject(i);
 
+					if(i==0)		
+						   hMap.put("title", "未到达"+optJSONArray.length()+"人");
+							hMap.put("starlevel", optJSONObject.optString("starlevel"));
 							if (optJSONObject.has("realname")) {
 								hMap.put("realname", optJSONObject.optString("realname"));
 							}
 							if (optJSONObject.has("portrait")) {
 								hMap.put("portrait", optJSONObject.optString("portrait"));
 							}
-
+							if (optJSONObject.has("mobile")) {
+								hMap.put("mobile", optJSONObject.optString("mobile"));
+							}
+							if (optJSONObject.has("starlevel")) {
+								hMap.put("starlevel", optJSONObject.optString("starlevel"));
+							}
 							data1.add(hMap);
 						}
 					}
@@ -5037,14 +5045,21 @@ public class ParserUtil {
 						for (int i = 0; i < optJSONArray.length(); i++) {
 							hMap = new HashMap<String, String>();
 							optJSONObject = optJSONArray.optJSONObject(i);
-
+							if(i==0)		
+								   hMap.put("title", "已到达"+optJSONArray.length()+"人");
 							if (optJSONObject.has("realname")) {
 								hMap.put("realname", optJSONObject.optString("realname"));
 							}
 							if (optJSONObject.has("portrait")) {
 								hMap.put("portrait", optJSONObject.optString("portrait"));
 							}
-
+							
+							if (optJSONObject.has("mobile")) {
+								hMap.put("mobile", optJSONObject.optString("mobile"));
+							}
+							if (optJSONObject.has("starlevel")) {
+								hMap.put("starlevel", optJSONObject.optString("starlevel"));
+							}
 							data2.add(hMap);
 						}
 					}
@@ -5052,8 +5067,9 @@ public class ParserUtil {
 				}
 
 			}
-			bundle.putSerializable("list1", data1);
 			bundle.putSerializable("list2", data2);
+			bundle.putSerializable("list1", data1);
+		
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
@@ -5785,4 +5801,99 @@ public class ParserUtil {
 		return bundle;
 
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public static Bundle ParserCompleteDetailB(String json) {
+		JSONObject jsonObject1 = null;
+		Bundle bundle = null;
+		HashMap<String, String> hMap = null;
+		JSONObject optJSONObject = null;
+		try {
+			jsonObject1 = new JSONObject(json);
+			bundle = new Bundle();
+
+			if (jsonObject1.has("msg")) {
+				bundle.putString("msg", jsonObject1.getString("msg"));
+			}
+			
+			
+			
+
+			if (jsonObject1.has("msg")) {
+				bundle.putString("msg", jsonObject1.getString("msg"));
+			}
+			ArrayList<HashMap<String, String>> data = new ArrayList<HashMap<String, String>>();
+			if (jsonObject1.has("result")) {
+
+				if (jsonObject1.has("result")) {
+					JSONObject jsonObject = new JSONObject(jsonObject1.getString("result"));
+
+					
+					
+					if (jsonObject.has("paymoney")) {
+						bundle.putString("paymoney", jsonObject.getString("paymoney"));
+					}
+					
+					
+					if (jsonObject.has("list")) {
+						JSONArray optJSONArray = jsonObject.optJSONArray("list");
+						for (int i = 0; i < optJSONArray.length(); i++) {
+							hMap = new HashMap<String, String>();
+							optJSONObject = optJSONArray.optJSONObject(i);
+
+
+							if (optJSONObject.has("earn_money")) {
+								hMap.put("earn_money", optJSONObject.optString("earn_money"));
+							}
+							if (optJSONObject.has("bounus")) {
+								hMap.put("bounus", optJSONObject.optString("bounus"));
+							}
+							if (optJSONObject.has("realname")) {
+								hMap.put("realname", optJSONObject.optString("realname"));
+							}
+							if (optJSONObject.has("portrait")) {
+								hMap.put("portrait", optJSONObject.optString("portrait"));
+							}
+							if (optJSONObject.has("room")) {
+								hMap.put("room", optJSONObject.optString("room"));
+							}
+
+//					          "earn_money": 210,//帮客收入
+//				                "bounus": "（含打赏4元）",
+//				                "realname": "韩士星",
+//				                "portrait": "http://f.haoshoubang.com/201508/userimg/userC/1441000456488.png",
+//				                "room": "标间15间"
+							data.add(hMap);
+						}
+					}
+
+				}
+
+			}
+			bundle.putSerializable("list", data);
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		return bundle;
+	}
+
 }

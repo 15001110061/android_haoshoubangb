@@ -10,6 +10,7 @@ import com.android.volley.toolbox.ImageLoader.ImageListener;
 import com.cgzz.job.b.R;
 import com.cgzz.job.b.application.GlobalVariables;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.support.v4.util.LruCache;
@@ -70,6 +71,13 @@ public class CurrentAdapter extends BaseAdapter {
 	private View getInviteView(final int position, View convertView) {
 
 		ViewHolder holder;
+
+		View currentFocus = ((Activity) context).getCurrentFocus();
+
+		if (currentFocus != null) {
+			currentFocus.clearFocus();
+		}
+
 		if (convertView == null) {
 			convertView = inflater.inflate(R.layout.fragment_current_item, null);
 			holder = new ViewHolder();
@@ -111,17 +119,18 @@ public class CurrentAdapter extends BaseAdapter {
 			holder.tv_current_yanshou.setVisibility(View.GONE);
 			holder.tv_current_route.setVisibility(View.VISIBLE);
 			// holder.tv_current_zhifu.setVisibility(View.GONE);
-
+			holder.tv_current_zhuijia.setVisibility(View.VISIBLE);
 		} else if ("1".equals(status)) {
-			
+			holder.tv_current_zhuijia.setVisibility(View.GONE);
 			holder.tv_current_state.setText("进行中");
 			holder.tv_current_yanshou.setVisibility(View.VISIBLE);
 			holder.tv_current_yanshou.setText("验收通过");
 			holder.rl_cur.setVisibility(View.VISIBLE);
 			holder.view_cur.setVisibility(View.VISIBLE);
-			holder.tv_current_route.setVisibility(View.GONE);
 			// holder.tv_current_zhifu.setVisibility(View.GONE);
+			holder.tv_current_route.setVisibility(View.GONE);
 		} else if ("4".equals(status)) {
+			holder.tv_current_zhuijia.setVisibility(View.GONE);
 			holder.tv_current_state.setText("待支付");
 			holder.tv_current_yanshou.setVisibility(View.VISIBLE);
 			holder.tv_current_yanshou.setText("去支付");
@@ -131,15 +140,16 @@ public class CurrentAdapter extends BaseAdapter {
 			// holder.tv_current_zhifu.setVisibility(View.VISIBLE);
 		} else if ("-1".equals(status)) { // 0:即将开始，1：进行中
 			holder.tv_current_state.setText("正在匹配");
+			holder.tv_current_zhuijia.setVisibility(View.VISIBLE);
 			holder.tv_current_yanshou.setVisibility(View.GONE);
-			holder.tv_current_route.setVisibility(View.GONE);
+	
 			holder.rl_cur.setVisibility(View.VISIBLE);
 			holder.view_cur.setVisibility(View.VISIBLE);
 			holder.tv_current_cancel_order.setVisibility(View.GONE);
-
+			holder.tv_current_route.setVisibility(View.GONE);
 		} else if ("5".equals(status)) {
 			holder.tv_current_state.setText("待支付");
-			holder.rl_cur.setVisibility(View.GONE);
+			holder.rl_cur.setVisibility(View.GONE);	holder.tv_current_zhuijia.setVisibility(View.GONE);
 			holder.view_cur.setVisibility(View.GONE);
 		}
 
@@ -153,11 +163,9 @@ public class CurrentAdapter extends BaseAdapter {
 
 		if ("1".equals(map.get("can_cancel"))) {
 			holder.tv_current_cancel_order.setVisibility(View.VISIBLE);
-			holder.tv_current_zhuijia.setVisibility(View.VISIBLE);
 
 		} else {
 			holder.tv_current_cancel_order.setVisibility(View.GONE);
-			holder.tv_current_zhuijia.setVisibility(View.GONE);
 
 		}
 

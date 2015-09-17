@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.support.v4.util.LruCache;
@@ -67,6 +68,14 @@ public class ReviewsAdapter extends BaseAdapter {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		convertView = getInviteView(position, convertView);
+		
+		  View currentFocus = ((Activity)context).getCurrentFocus();
+			
+		    if (currentFocus != null) {
+		        currentFocus.clearFocus();
+		    }
+		
+		
 		return convertView;
 	}
 

@@ -81,6 +81,7 @@ public class HttpStaticApi {
 	public static final int  paylistB_Http = 10081;//
 	public static final int  messagelistB_Http = 10082;//
 	public static final int  priceB_Http = 10083;//
+	public static final int  completeDetailB_Http = 10084;//
 }
 
 

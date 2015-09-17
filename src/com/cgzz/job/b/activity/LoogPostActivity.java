@@ -105,10 +105,10 @@ public class LoogPostActivity extends BaseActivity implements OnClickListener {
 
 	private void initView() {
 		llLeft = (LinearLayout) findViewById(R.id.ll_title_left);// ×ó²à
-		hl_lp_1 = (HorizontalListView) findViewById(R.id.hl_lp_1);
-		hl_lp_2 = (HorizontalListView) findViewById(R.id.hl_lp_2);
-		tv_lp_title1 = (TextView) findViewById(R.id.tv_lp_title1);
-		tv_lp_title3 = (TextView) findViewById(R.id.tv_lp_title3);
+//		hl_lp_1 = (HorizontalListView) findViewById(R.id.hl_lp_1);
+//		hl_lp_2 = (HorizontalListView) findViewById(R.id.hl_lp_2);
+//		tv_lp_title1 = (TextView) findViewById(R.id.tv_lp_title1);
+//		tv_lp_title3 = (TextView) findViewById(R.id.tv_lp_title3);
 		hListViewAdapter1 = new HorizontalListViewAdapter(LoogPostActivity.this);
 		hl_lp_1.setAdapter(hListViewAdapter1);
 

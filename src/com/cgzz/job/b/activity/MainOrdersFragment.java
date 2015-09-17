@@ -844,7 +844,7 @@ public class MainOrdersFragment extends BaseActivity implements OnClickListener,
 	 */
 	@Override
 	public void onTextClick(int position, View v, int logo) {
-		Intent intent = new Intent(MainOrdersFragment.this, LoogPostActivity.class);
+		Intent intent = new Intent(MainOrdersFragment.this, LoogPostActivitys.class);
 		Bundle bundle = new Bundle();
 		bundle.putString("orderid", CurrentData.get(position).get("id"));
 		intent.putExtras(bundle);
@@ -927,17 +927,29 @@ public class MainOrdersFragment extends BaseActivity implements OnClickListener,
 	}
 
 	/**
-	 * 完成中再次评价
+	 * 完成中再次评价(详情)
 	 */
 	@Override
 	public void onZFClick(int position, View v, int logo) {
-		Intent intent = new Intent(MainOrdersFragment.this, ReviewsActivity.class);
+//		Intent intent = new Intent(MainOrdersFragment.this, ReviewsActivity.class);
+//		Bundle bundle = new Bundle();
+//		bundle.putString("bangkelist", TrainingData.get(position).get("bangkelist"));
+//		bundle.putString("id", TrainingData.get(position).get("id"));
+//		intent.putExtras(bundle);
+//		startActivity(intent);
+
+		
+		
+		
+		
+		
+		
+		
+		Intent intent = new Intent(MainOrdersFragment.this, OrderDetailsActivity.class);
 		Bundle bundle = new Bundle();
-		bundle.putString("bangkelist", TrainingData.get(position).get("bangkelist"));
 		bundle.putString("id", TrainingData.get(position).get("id"));
 		intent.putExtras(bundle);
 		startActivity(intent);
-
 	}
 
 	public void refreshOrders() {
