@@ -14,7 +14,7 @@ import com.android.volley.toolbox.Volley;
 import com.cgzz.job.b.BaseActivityCloseListener;
 
 /**
- * 全局变量
+ * 全局变量 
  */
 public class GlobalVariables extends LitePalApplication {
 	
