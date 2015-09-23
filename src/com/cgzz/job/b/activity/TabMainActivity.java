@@ -20,18 +20,18 @@ public class TabMainActivity extends TabActivity implements OnClickListener {
 	private TextView main_tab_new_message;
 	ImageButton buttom_1, buttom_2, buttom_3, buttom_4;
 	private View currentButton;
-	private String cityname = "", cityid = "";
+	private String cityname = "", cityid = "",type="";
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_tabmain);
-
+		Utils.closeActivity();
 		Intent intents = getIntent();
 		cityname = intents.getStringExtra("cityname");
 		cityid = intents.getStringExtra("cityid");
-
+		type = intents.getStringExtra("type");
 		tabHost = this.getTabHost();
 		TabHost.TabSpec spec;
 		Intent intent;
@@ -59,13 +59,25 @@ public class TabMainActivity extends TabActivity implements OnClickListener {
 		buttom_2 = (ImageButton) findViewById(R.id.buttom_2);
 		buttom_3 = (ImageButton) findViewById(R.id.buttom_3);
 		buttom_4 = (ImageButton) findViewById(R.id.buttom_4);
-		tabHost.setCurrentTab(0);
+
 
 		buttom_1.setOnClickListener(this);
 		buttom_2.setOnClickListener(this);
 		buttom_3.setOnClickListener(this);
 		buttom_4.setOnClickListener(this);
-		buttom_1.performClick();
+
+		
+		
+		if ("4".equals(type)) {
+			tabHost.setCurrentTab(1);
+			buttom_2.performClick();
+		} else {
+			tabHost.setCurrentTab(0);
+			buttom_1.performClick();
+		}
+		
+		
+		
 	}
 
 	@Override

@@ -1,0 +1,97 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_seting_two"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/common_grey" >
+
+    <include
+        android:id="@+id/include_stub_title"
+        layout="@layout/stub_title" />
+
+    <TextView
+        android:id="@+id/tv_paycash_titlew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_paycash_img"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/dd_dimen_20px"
+        android:layout_marginTop="@dimen/dd_dimen_25px"
+        android:gravity="center"
+        android:text="￥"
+        android:textColor="@color/common_383838"
+        android:textSize="@dimen/dd_dimen_60px" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/tv_paycash_titlew"
+        android:orientation="vertical" >
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@+id/ll"
+            android:layout_marginBottom="@dimen/dd_dimen_20px"
+            android:flipInterval="30"
+            android:persistentDrawingCache="animation" >
+        </android.support.v4.view.ViewPager>
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="@dimen/dd_dimen_10px"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/btn_yaoqing"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dd_dimen_77px"
+                android:layout_marginLeft="@dimen/dd_dimen_10px"
+                android:layout_marginRight="@dimen/dd_dimen_10px"
+                android:layout_weight="1"
+                android:background="@drawable/shape_me_yanshou"
+                android:gravity="center"
+                android:text="邀请"
+                android:textColor="@color/common_text"
+                android:textSize="@dimen/dd_dimen_30px"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="@dimen/dd_dimen_1px"
+                android:layout_height="fill_parent"
+                android:background="@color/devide_line" />
+
+            <TextView
+                android:id="@+id/btn_shanchu"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dd_dimen_77px"
+                android:layout_marginLeft="@dimen/dd_dimen_26px"
+                android:layout_marginRight="@dimen/dd_dimen_26px"
+                android:layout_weight="1"
+                android:background="@drawable/shape_home_item_tv_sign_bg"
+                android:gravity="center"
+                android:text="付现金"
+                android:textColor="@color/common_white"
+                android:textSize="@dimen/dd_dimen_30px" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_paycash_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/include_stub_title"
+        android:layout_marginLeft="@dimen/dd_dimen_26px"
+        android:layout_marginTop="@dimen/dd_dimen_26px"
+        android:gravity="center"
+        android:text="本次交易共计"
+        android:textColor="@color/common_666666"
+        android:textSize="@dimen/dd_dimen_24px" />
+
+</RelativeLayout>

@@ -778,23 +778,34 @@ public class HelpPassengersActivity extends BaseActivity implements OnClickListe
 
 			if (!Utils.isEmpty(bounus)) {
 				tv_help_shang.setVisibility(View.VISIBLE);
+			}else{
+				tv_help_shang.setVisibility(View.GONE);
 			}
 
 			if (!Utils.isEmpty(iscash)) {
 				tv_help_xian.setVisibility(View.VISIBLE);
+			}else{
+				tv_help_xian.setVisibility(View.GONE);
 			}
 
 			if (!Utils.isEmpty(havelaunch)) {
 				tv_help_can.setVisibility(View.VISIBLE);
+			}else{
+				tv_help_can.setVisibility(View.GONE);
 			}
 
 			if (!Utils.isEmpty(havebar)) {
 				tv_help_ba.setVisibility(View.VISIBLE);
+			}else{
+				tv_help_ba.setVisibility(View.GONE);
 			}
 
 			if (!Utils.isEmpty(mes) || !Utils.isEmpty(Voiceurl)) {
 				tv_help_liu.setVisibility(View.VISIBLE);
+			}else{
+				tv_help_liu.setVisibility(View.GONE);
 			}
+
 
 			// 根据上面发送过去的请求吗来区别
 			switch (requestCode) {

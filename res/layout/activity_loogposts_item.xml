@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/common_grey" >
+      <TextView
+                android:id="@+id/tv_review_title"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="小名"
+                android:layout_marginTop="@dimen/dd_dimen_15px"
+                android:textColor="@color/common_666666"
+                android:textSize="@dimen/dd_dimen_24px" />
+    <RelativeLayout
+        android:layout_below="@id/tv_review_title"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dd_dimen_150px"
+        android:layout_marginLeft="@dimen/dd_dimen_20px"
+        android:layout_marginRight="@dimen/dd_dimen_20px"
+        android:layout_marginTop="@dimen/dd_dimen_20px"
+        android:background="@drawable/shape_current_item_rl_bg" >
+
+        <ImageView
+            android:id="@+id/iv_collection_picture"
+            android:layout_width="@dimen/dd_dimen_100px"
+            android:layout_height="@dimen/dd_dimen_100px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dd_dimen_26px"
+            android:scaleType="fitXY"
+            android:src="@drawable/image_moren_pop" />
+
+        <ImageView
+            android:id="@+id/iv_collection_tel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"    android:layout_marginRight="@dimen/dd_dimen_26px"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_dianhua" />
+
+        <LinearLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dd_dimen_30px"
+            android:layout_height="@dimen/dd_dimen_140px"
+            android:layout_toRightOf="@+id/iv_collection_picture"
+            android:gravity="center_vertical"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_review_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="小名"
+                android:textColor="@color/common_666666"
+                android:textSize="@dimen/dd_dimen_30px" />
+
+            <com.cgzz.job.b.view.CustomerRatingBarGo
+                android:id="@+id/bar_review_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical" >
+            </com.cgzz.job.b.view.CustomerRatingBarGo>
+
+            <TextView
+                android:id="@+id/tv_review_jiedan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="接单"
+                android:visibility="gone"
+                android:textColor="@color/common_666666"
+                android:textSize="@dimen/dd_dimen_24px" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
